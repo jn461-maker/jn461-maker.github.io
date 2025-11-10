@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambridge Wellness Hub | Integrated Healthcare Excellence</title>
+    <meta name="description" content="Premium integrated healthcare in Cambridge. Combining conventional medicine with holistic wellness. CQC registered, evidence-based care.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #1B3B5A;
+            --sky: #4A90B8;
+            --cream: #F8F6F3;
+            --gold: #C9A961;
+            --slate: #6B7C93;
+            --white: #FFFFFF;
+            --text-dark: #2A2F3A;
+            --text-light: #6B7C93;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: var(--white);
+            padding: 1.5rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(27, 59, 90, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            box-shadow: 0 4px 20px rgba(27, 59, 90, 0.08);
+            padding: 1rem 0;
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--sky), var(--navy));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+
+        .logo-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.2;
+        }
+
+        .logo-text p {
+            font-size: 0.75rem;
+            color: var(--slate);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .nav {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: var(--sky);
+        }
+
+        .phone-cta {
+            background: var(--sky);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .phone-cta:hover {
+            background: var(--navy);
+            transform: translateY(-2px);
+        }
+
+        /* Hero */
+        .hero {
+            margin-top: 90px;
+            position: relative;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, rgba(27, 59, 90, 0.92), rgba(74, 144, 184, 0.85)), 
+                        url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="1920" height="800"%3E%3Crect fill="%234A90B8" width="1920" height="800"/%3E%3C/svg%3E');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            width: 100%;
+        }
+
+        .hero-subtitle {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+            opacity: 0.95;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            max-width: 900px;
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            max-width: 700px;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .hero-cta {
+            background: var(--gold);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            display: inline-block;
+            transition: all 0.3s;
+            letter-spacing: 0.5px;
+            border: 2px solid var(--gold);
+        }
+
+        .hero-cta:hover {
+            background: transparent;
+            transform: translateY(-3px);
+        }
+
+        /* Value Props Section */
+        .value-section {
+            background: var(--white);
+            padding: 6rem 3rem;
+        }
+
+        .value-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .value-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .value-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .value-header .subtitle {
+            font-size: 1.2rem;
+            color: var(--slate);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.95rem;
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4rem;
+            margin-top: 4rem;
+        }
+
+        .value-card {
+            text-align: center;
+        }
+
+        .value-icon {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, var(--sky), var(--navy));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .value-icon svg {
+            width: 70px;
+            height: 70px;
+            stroke: white;
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .value-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .value-card ul {
+            list-style: none;
+            text-align: left;
+            max-width: 350px;
+            margin: 0 auto;
+        }
+
+        .value-card li {
+            padding: 0.6rem 0;
+            color: var(--text-dark);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .value-card li::before {
+            content: "•";
+            color: var(--sky);
+            font-weight: bold;
+            display: inline-block;
+            width: 1.5em;
+            font-size: 1.2rem;
+        }
+
+        /* Content Section */
+        .content-section {
+            background: var(--cream);
+            padding: 6rem 3rem;
+        }
+
+        .content-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .content-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 4rem;
+        }
+
+        .content-intro h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+        }
+
+        .content-intro p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .content-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .content-link {
+            color: var(--sky);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .content-link:hover {
+            color: var(--navy);
+        }
+
+        /* Full Width Image Banner */
+        .image-banner {
+            height: 500px;
+            background: linear-gradient(to right, rgba(27, 59, 90, 0.5), rgba(74, 144, 184, 0.5)),
+                        url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="1920" height="500"%3E%3Crect fill="%236B7C93" width="1920" height="500"/%3E%3Ctext x="50%25" y="50%25" font-size="32" fill="white" text-anchor="middle" dominant-baseline="middle" font-family="serif" opacity="0.4"%3EPremium Healthcare Environment%3C/text%3E%3C/svg%3E');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .banner-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .banner-content p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .banner-cta {
+            background: white;
+            color: var(--navy);
+            padding: 1rem 2.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .banner-cta:hover {
+            background: var(--gold);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Services Grid */
+        .services-section {
+            background: var(--white);
+            padding: 6rem 3rem;
+        }
+
+        .services-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .services-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--cream);
+            padding: 0;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(27, 59, 90, 0.15);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--sky), var(--navy));
+        }
+
+        .service-content {
+            padding: 2rem 1.5rem;
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        /* Philosophy Section */
+        .philosophy-section {
+            background: var(--navy);
+            color: white;
+            padding: 6rem 3rem;
+        }
+
+        .philosophy-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .philosophy-container h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .philosophy-item h3 {
+            font-size: 1.1rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .philosophy-item p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--cream);
+            padding: 6rem 3rem;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .contact-info h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--navy);
+            margin-bottom: 2rem;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+        }
+
+        .contact-details {
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .contact-item-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--sky);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(27, 59, 90, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--navy);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid rgba(27, 59, 90, 0.1);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--sky);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--sky);
+            color: white;
+            padding: 1.2rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .submit-btn:hover {
+            background: var(--navy);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--navy);
+            color: white;
+            padding: 4rem 3rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .footer-section a {
+            display: block;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            margin-bottom: 0.8rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        .footer-compliance {
+            display: flex;
+            gap: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .value-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 1.5rem;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .hero {
+                height: auto;
+                padding: 4rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-description {
+                font-size: 1.1rem;
+            }
+
+            .value-section,
+            .content-section,
+            .services-section,
+            .philosophy-section,
+            .contact-section {
+                padding: 4rem 1.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .philosophy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <div class="logo-section">
+                <div class="logo-icon">🏥</div>
+                <div class="logo-text">
+                    <h1>Cambridge Wellness Hub</h1>
+                    <p>Integrated Healthcare</p>
+                </div>
+            </div>
+            <nav class="nav">
+                <a href="#home">Home</a>
+                <a href="#services">What We Do</a>
+                <a href="#approach">Our Approach</a>
+                <a href="#contact">Contact</a>
+                <a href="tel:01223000000" class="phone-cta">01223 XXX XXX</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="hero-subtitle">Healthcare Excellence in Cambridge</p>
+            <h1>Where Comprehensive Medicine Meets Personal Care</h1>
+            <p class="hero-description">At Cambridge Wellness Hub, we provide exceptional integrated healthcare that combines the precision of conventional medicine with a holistic understanding of your wellbeing. Our board-certified physicians take the time to understand you—not just your symptoms.</p>
+            <a href="#contact" class="hero-cta">SCHEDULE YOUR CONSULTATION</a>
+        </div>
+    </section>
+
+    <!-- Value Propositions -->
+    <section class="value-section">
+        <div class="value-container">
+            <div class="value-header">
+                <h2>You should have high expectations. We meet them with:</h2>
+                <p class="subtitle">OFFERING YOU A UNIQUE APPROACH TO GET WELL AND STAY WELL</p>
+            </div>
+
+            <div class="value-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3>Convenience & Dependability</h3>
+                    <ul>
+                        <li>Same-day appointments</li>
+                        <li>Online appointment scheduling</li>
+                        <li>Convenient Cambridge location & hours</li>
+                        <li>Ease of communication</li>
+                    </ul>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <polyline points="2 17 12 22 22 17"/>
+                            <polyline points="2 12 12 17 22 12"/>
+                        </svg>
+                    </div>
+                    <h3>A "Whole Picture" Approach</h3>
+                    <ul>
+                        <li>Patient-doctor team approach</li>
+                        <li>Comprehensive consultation</li>
+                        <li>In-office laboratory testing</li>
+                        <li>Solutions that get you well</li>
+                    </ul>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                    </div>
+                    <h3>Unique Approach to Wellness</h3>
+                    <ul>
+                        <li>Combination of Conventional and Integrative Medicine</li>
+                        <li>A focus on healing & maintenance of wellness</li>
+                        <li>Evidence-based treatment protocols</li>
+                        <li>Personalized care plans</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="content-container">
+            <div class="content-intro">
+                <h2>More than just your typical doctor's office.</h2>
+                <p>At Cambridge Wellness Hub we provide unmatched convenient healthcare in a fast-moving city, with a staff of caring board certified doctors, supporting medical staff, the latest in treatments and diagnostics—we concentrate on an integrative approach to treat our patients. At Cambridge Wellness Hub patients will find a wide range of services that treat the individual. Integrative medicine puts an emphasis on functional, holistic and internal medicine.</p>
+                <p>Located in the heart of Cambridge, between the Science Park and the city centre, Cambridge Wellness Hub is a full service, state-of-the-art medical center with integrative doctors who take a different approach to healing acute and chronic conditions, as well as maintaining your health. Our practice specializes in <a href="#" class="content-link">Internal Medicine</a>, <a href="#" class="content-link">Primary Care Medicine</a>, and <a href="#" class="content-link">Preventive Medicine</a> using an integrative approach and <strong>Integrative Treatment</strong> methods to accommodate all of your health needs.</p>
+                <p>When choosing Cambridge Wellness Hub you're not only choosing a highly trained medical professional, you're choosing someone who's committed to partnering with you to improve your overall health and well-being.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Banner -->
+    <div class="image-banner">
+        <div class="banner-content">
+            <h2>Healthcare the way it should be.</h2>
+            <p>You want a doctor you can trust, one who will understand you.</p>
+            <a href="#contact" class="banner-cta">BOOK YOUR APPOINTMENT</a>
+        </div>
+    </div>
+
+    <!-- Services -->
+    <section class="services-section" id="services">
+        <div class="services-container">
+            <div class="services-header">
+                <h2>Featured Services with our Integrated Medicine Doctors</h2>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image"></div>
+                    <div class="service-content">
+                        <h3>Preventive Health Screening</h3>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image"></div>
+                    <div class="service-content">
+                        <h3>Chronic Disease Management</h3>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image"></div>
+                    <div class="service-content">
+                        <h3>Cardiovascular Health</h3>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image"></div>
+                    <div class="service-content">
+                        <h3>Women's Wellness</h3>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image"></div>
+                    <div class="service-content">
+                        <h3>Mental Health Support</h3>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image"></div>
+                    <div class="service-content">
+                        <h3>Nutritional Medicine</h3>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image"></div>
+                    <div class="service-content">
+                        <h3>Executive Health Assessments</h3>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image"></div>
+                    <div class="service-content">
+                        <h3>Functional Medicine</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy -->
+    <section class="philosophy-section" id="approach">
+        <div class="philosophy-container">
+            <h2>Our Commitment to You</h2>
+            
+            <div class="philosophy-grid">
+                <div class="philosophy-item">
+                    <h3>WE GIVE YOU ACCESS TO YOUR DOCTOR</h3>
+                    <p>You want to call/text/e-mail for advice. In today's healthcare landscape, access matters. We ensure you can reach your physician when you need guidance, not just during appointments.</p>
+                </div>
+
+                <div class="philosophy-item">
+                    <h3>OUR COSTS ARE CLEAR. NO SURPRISES.</h3>
+                    <p>You don't like big surprise bills. Neither do we. Transparent pricing means you know exactly what to expect—no hidden fees, no unexpected charges.</p>
+                </div>
+
+                <div class="philosophy-item">
+                    <h3>WE ARE AFFORDABLE</h3>
+                    <p>You don't want to spend a fortune on your primary care. Quality healthcare shouldn't break the bank. We offer competitive pricing with exceptional value.</p>
+                </div>
+
+                <div class="philosophy-item">
+                    <h3>WE BUILD TRUST AND UNDERSTANDING</h3>
+                    <p>You want a doctor you can trust, one who will understand you. We give you time at each visit to build trust and understanding—because medicine is about relationships.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Begin Your Journey to Optimal Health</h2>
+                <p>Ready to experience healthcare that prioritizes you? Our team is here to answer your questions and schedule your first consultation. Whether you're seeking preventive care, managing a chronic condition, or simply want a physician who truly listens—we're ready to partner with you.</p>
+
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📞</div>
+                        <div>
+                            <strong>Phone</strong><br>
+                            01223 XXX XXX
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-item-icon">✉️</div>
+                        <div>
+                            <strong>Email</strong><br>
+                            hello@cambridgewellnesshub.co.uk
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📍</div>
+                        <div>
+                            <strong>Location</strong><br>
+                            Cambridge Science Park Area<br>
+                            Cambridge, CB4 XXX
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-item-icon">🕐</div>
+                        <div>
+                            <strong>Hours</strong><br>
+                            Mon-Fri: 8:00 AM - 6:00 PM<br>
+                            Sat: 9:00 AM - 1:00 PM
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Service Interest</label>
+                        <select id="service" name="service">
+                            <option>New Patient Registration</option>
+                            <option>Preventive Health Screening</option>
+                            <option>Chronic Disease Management</option>
+                            <option>Executive Health Assessment</option>
+                            <option>General Inquiry</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Tell us about your health goals or any questions you have..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Request Appointment</button>
+
+                    <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--slate); text-align: center;">
+                        By submitting this form, you consent to be contacted by Cambridge Wellness Hub. Your data is protected under UK GDPR regulations.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>Cambridge Wellness Hub</h3>
+                <p>Providing exceptional integrated healthcare to the Cambridge community. Our commitment is to your health, your wellbeing, and your peace of mind.</p>
+                <p><strong>CQC Registered Practice</strong><br>GMC Registered Physicians<br>Member, Royal College of General Practitioners</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Services</h4>
+                <a href="#">Primary Care</a>
+                <a href="#">Preventive Medicine</a>
+                <a href="#">Chronic Disease Management</a>
+                <a href="#">Mental Health Support</a>
+                <a href="#">Women's Wellness</a>
+                <a href="#">Executive Health</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Practice</h4>
+                <a href="#">About Us</a>
+                <a href="#">Our Physicians</a>
+                <a href="#">New Patients</a>
+                <a href="#">Insurance & Fees</a>
+                <a href="#">Patient Portal</a>
+                <a href="#">Careers</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Information</h4>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">GDPR Compliance</a>
+                <a href="#">Accessibility</a>
+                <a href="#">Complaints Procedure</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Cambridge Wellness Hub. All rights reserved.</p>
+            <div class="footer-compliance">
+                <span>CQC Registered</span>
+                <span>GDPR Compliant</span>
+                <span>WCAG 2.1 AA</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        const headerOffset = 90;
+                        const elementPosition = target.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your inquiry! We will contact you within 24 hours to confirm your appointment.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
