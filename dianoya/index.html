@@ -387,7 +387,6 @@
         @media (max-width: 768px) { .nav-center { display: none; } .nav { padding: 0 20px; height: 64px; } h1 { font-size: 42px; margin-bottom: 20px; } .hero-content { padding: 0 20px; } .market-strip { grid-template-columns: 1fr; } .btn-container { flex-direction: column; width: 100%; } .btn-primary, .btn-secondary { width: 100%; } .pipeline-wrapper { margin: 0 -20px; width: calc(100% + 40px); border-radius: 0; border-left: 0; border-right: 0; } }
         
         .tech-diagram { position: relative; width: 220px; height: 220px; display: flex; justify-content: center; align-items: center; }
-    
         @media (max-width: 1024px) { 
             .grid-2col { grid-template-columns: 1fr; gap: 60px; } 
             .corporate-summary { grid-template-columns: 1fr; gap: 40px; } 
@@ -479,6 +478,8 @@
             .bar-labels { font-size: 13px; margin-bottom: 10px; }
             .bar-track { height: 36px; }
             .bar-val { font-size: 12px; padding-right: 12px; }
+            .chart-container > div[style*="margin-top:32px"] { flex-direction: column !important; align-items: stretch !important; }
+            .chart-container .btn-secondary { width: 100%; margin-top: 8px; }
             
             /* Business model */
             .deal-bullets { margin-top: 16px; }
