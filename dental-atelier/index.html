@@ -403,9 +403,119 @@
             transition: all 0.3s;
         }
         .slider-btn:hover { border-color: var(--text-main); background: var(--text-main); color: #fff; }
+/* =========================================
+   NEW SECTION: MEET THE TEAM
+   ========================================= */
+   .team-section {
+    padding-bottom: 80px;
+    border-bottom: 1px solid var(--border-light);
+}
 
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(30px, 4vw, 60px);
+    margin-top: 80px;
+}
+
+.team-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-img-box {
+    width: 100%;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    /* Consistent with the 'petal' theme but slightly subtler for portraits */
+    border-radius: 0px 80px 0px 80px; 
+    background: #E5E5E5;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.team-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: transform 0.8s var(--ease-silk), filter 0.5s ease;
+}
+
+.team-card:hover .team-img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+.team-info {
+    padding-right: 10px;
+}
+
+.team-name {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: var(--text-main);
+    margin-bottom: 5px;
+}
+
+.team-role {
+    font-family: var(--font-ui);
+    color: var(--gold);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.team-quals {
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.team-gdc {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    color: var(--text-light);
+    display: block;
+    margin-bottom: 20px;
+}
+
+.team-quote {
+    font-family: var(--font-editorial);
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text-main);
+    line-height: 1.4;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-light);
+    margin-top: auto; /* Pushes quote to bottom if heights vary */
+}
+
+/* Mobile Responsiveness for Team */
+@media (max-width: 1024px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+    .team-img-box {
+        aspect-ratio: 4/5;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .team-info {
+        text-align: center;
+    }
+}
         /* =========================================
-           9. TECHNOLOGY
+           10. TECHNOLOGY
            ========================================= */
         .tech-section { background: #FFFFFF; }
         .tech-interface { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-top: 60px; }
@@ -787,6 +897,75 @@
         </div>
     </section>
 
+    <section id="team" class="section team-section">
+        <div class="container">
+            <div class="flex-between" style="align-items: flex-end; margin-bottom: 20px;">
+                <div>
+                    <span class="eyebrow">The Clinicians</span>
+                    <h2 class="display-lg">Masters of<br>The Craft</h2>
+                </div>
+                <p style="text-align: right;" class="hide-mobile">
+                    Highly qualified specialists dedicated to<br>minimally invasive precision.
+                </p>
+            </div>
+    
+            <div class="team-grid">
+                
+                <div class="team-card hover-target">
+                    <div class="team-img-box">
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=800" alt="Dr. Alexander Thorne" class="team-img">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Dr. Alexander Thorne</h3>
+                        <span class="team-role">Clinical Director & Implantologist</span>
+                        
+                        <span class="team-quals">BDS (Lond), MSc Implantology, MFDS RCPS</span>
+                        <span class="team-gdc">GDC No. 182944</span>
+                        
+                        <p class="team-quote">
+                            "Implant dentistry is engineering meeting biology. My focus is not just on the tooth, but on preserving the bone structure for decades to come."
+                        </p>
+                    </div>
+                </div>
+    
+                <div class="team-card hover-target">
+                    <div class="team-img-box">
+                        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80&w=800" alt="Dr. Elara Vance" class="team-img">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Dr. Elara Vance</h3>
+                        <span class="team-role">Cosmetic & Restorative Lead</span>
+                        
+                        <span class="team-quals">BDS (Hons), PGDip Aesthetic Dentistry</span>
+                        <span class="team-gdc">GDC No. 249102</span>
+                        
+                        <p class="team-quote">
+                            "I believe in 'invisible' dentistry. A veneer should never look like a veneer; it should look like you were born with a perfect genetic gift."
+                        </p>
+                    </div>
+                </div>
+    
+                <div class="team-card hover-target">
+                    <div class="team-img-box">
+                        <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=800" alt="Dr. James Sterling" class="team-img">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Dr. James Sterling</h3>
+                        <span class="team-role">Specialist Orthodontist</span>
+                        
+                        <span class="team-quals">BDS, MSc, MOrth RCS (Eng)</span>
+                        <span class="team-gdc">GDC No. 110459</span>
+                        
+                        <p class="team-quote">
+                            "Straight teeth are vital, but facial harmony is paramount. We align smiles to support the lips and cheeks, creating an anti-ageing effect."
+                        </p>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+    
     <section id="technology" class="section tech-section">
         <div class="container">
             <span class="eyebrow">Precision Tech</span>
@@ -933,7 +1112,7 @@
             <div style="margin-top: 80px; padding-top: 20px; border-top: 1px solid #222;">
                 <div class="flex-between" style="flex-wrap: wrap; gap: 20px;">
                     <span style="font-size: 0.75rem; color: #444; text-transform: uppercase;">
-                        © 2025 Mayfair Dental Atelier.
+                        © 202 Mayfair Dental Atelier.
                     </span>
                     <div class="legal-links">
                         <a href="#">Privacy Policy</a>
@@ -1042,6 +1221,18 @@
                     y: 50, opacity: 0, duration: 1, delay: i * 0.2, ease: "power3.out"
                 });
             });
+
+            // Team Cards Animation
+gsap.utils.toArray('.team-card').forEach((card, i) => {
+    gsap.from(card, {
+        scrollTrigger: { trigger: card, start: "top 85%" },
+        y: 40, 
+        opacity: 0, 
+        duration: 1, 
+        delay: i * 0.15, 
+        ease: "power3.out"
+    });
+});
 
             // Navbar: Scrolled State (Blur/Opacity)
             const nav = document.querySelector('nav');
