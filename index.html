@@ -155,7 +155,7 @@
         }
         
         .tagline {
-            font-size: clamp(0.95rem, 1.5vw, 1.1rem); 
+            font-size: clamp(0.8rem, 1.2vw, 1rem);
             color: rgba(255, 255, 255, 0.8);
             margin-bottom: 1.5rem;
             font-weight: 300;
@@ -165,6 +165,31 @@
             animation: fadeInUp 1s ease-out 0.4s forwards;
         }
 
+        /* NEW GUARANTEE BADGE */
+        .hero-guarantee {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            padding: 0.75rem 1.25rem;
+            border-radius: 6px;
+            color: var(--white);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.6s forwards;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            text-align: left;
+            max-width: 600px;
+        }
+        
+        .hero-guarantee svg {
+            color: var(--gold);
+            flex-shrink: 0;
+        }
+
         .capacity-badge {
             display: inline-block;
             color: var(--white);
@@ -172,7 +197,7 @@
             font-weight: 600;
             margin-bottom: 2rem;
             opacity: 0;
-            animation: fadeInUp 1s ease-out 0.6s forwards;
+            animation: fadeInUp 1s ease-out 0.8s forwards; /* Delayed slightly */
             letter-spacing: 0.15em;
             text-transform: uppercase;
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -184,7 +209,7 @@
 
         .hero-btns {
             opacity: 0;
-            animation: fadeInUp 1s ease-out 0.8s forwards;
+            animation: fadeInUp 1s ease-out 1s forwards; /* Delayed slightly */
             display: flex;
             gap: 1rem;
             justify-content: center;
@@ -257,31 +282,27 @@
         }
 
         .sticky-email-btn {
-            width: 56px;
-            height: 56px;
+            width: auto;
+            height: auto;
+            padding: 1rem 1.5rem;
             background: var(--gold);
             color: var(--navy-dark);
-            border-radius: 50%;
+            border-radius: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
             box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
             transition: transform 0.2s ease;
-        }
-
-        .sticky-email-btn svg {
-            width: 24px;
-            height: 24px;
-            fill: none;
-            stroke: var(--navy-dark);
-            stroke-width: 2;
+            font-weight: 700;
+            font-size: 0.95rem;
+            white-space: nowrap;
         }
 
         .sticky-close {
             position: absolute;
-            top: -5px;
-            right: -5px;
+            top: -8px;
+            right: -8px;
             background: var(--navy-dark);
             color: var(--white);
             width: 20px;
@@ -299,25 +320,9 @@
 
         @media (hover: hover) {
             .sticky-wrapper::before {
-                content: 'Book a Call';
-                position: absolute;
-                right: 70px;
-                top: 50%;
-                transform: translateY(-50%) translateX(10px);
-                background: var(--white);
-                color: var(--navy-dark);
-                padding: 0.5rem 0.9rem;
-                border-radius: 4px;
-                font-size: 0.85rem;
-                font-weight: 700;
-                opacity: 0;
-                transition: all 0.2s ease;
-                pointer-events: none;
-                white-space: nowrap;
-                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+                display: none;
             }
-            .sticky-wrapper:hover::before { opacity: 1; transform: translateY(-50%) translateX(0); }
-            .sticky-email-btn:hover { transform: scale(1.1); }
+            .sticky-email-btn:hover { transform: scale(1.05); }
         }
 
         /* --- LISTS --- */
@@ -342,7 +347,7 @@
             box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
         }
 
-        /* --- TESTIMONIALS (Updated) --- */
+        /* --- TESTIMONIALS --- */
         .testimonial-container {
             display: grid;
             gap: 3rem;
@@ -371,12 +376,13 @@
             margin: 0 auto;
         }
 
-        /* --- PORTFOLIO --- */
+        /* --- PORTFOLIO (Fixed Alignment) --- */
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 5rem;
+            justify-content: center; 
         }
         .portfolio-card {
             background: rgba(255, 255, 255, 0.03);
@@ -466,12 +472,13 @@
             letter-spacing: 0.05em;
         }
 
-        /* --- INVESTMENT & PRICING --- */
+        /* --- INVESTMENT & PRICING (Fixed Alignment) --- */
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 4rem;
+            justify-content: center;
         }
         .pricing-card {
             background: var(--white);
@@ -483,12 +490,32 @@
             transition: all 0.3s ease;
             position: relative;
         }
+        
         .pricing-card.featured {
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--gold);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15);
             transform: scale(1.02);
             z-index: 2;
-            border-top: 4px solid var(--gold);
+            background: linear-gradient(to bottom, #FFFEFA, #FFFFFF);
         }
+
+        .recommended-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold);
+            color: var(--navy-dark);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 1rem;
+            border-radius: 20px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            white-space: nowrap;
+        }
+
         .tier-tagline {
             display: block;
             font-size: 0.75rem;
@@ -593,6 +620,7 @@
             .content-section { padding: 5rem 1.5rem; }
             .hero-btns { flex-direction: column; align-items: center; }
             .hero-btns .btn { width: 100%; max-width: 400px; text-align: center; }
+            .hero-guarantee { width: 100%; text-align: left; }
         }
         @media (max-width: 768px) {
             .section-heading { font-size: 2.5rem; }
@@ -605,12 +633,7 @@
 
     <div class="sticky-wrapper" id="stickyWrapper">
         <a href="https://calendly.com/jn461-cam/30min" class="sticky-email-btn" target="_blank">
-            <svg viewBox="0 0 24 24">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                <line x1="16" y1="2" x2="16" y2="6"></line>
-                <line x1="8" y1="2" x2="8" y2="6"></line>
-                <line x1="3" y1="10" x2="21" y2="10"></line>
-            </svg>
+            Book a Call
         </a>
         <button class="sticky-close" onclick="document.getElementById('stickyWrapper').style.display='none'" aria-label="Close">×</button>
     </div>
@@ -620,7 +643,10 @@
         <div class="hero-content">
             <h1 class="name-reveal">Turn Visitors Into Patients <br><span style="color:var(--gold);">in 7 Days.</span></h1>
             
-            <p class="tagline">Elite websites for private medical practices. Designed by a Cambridge student doctor. Turn your existing site into a clean, modern patient-booking machine with just <strong>90 minutes of your time</strong>.</p>
+            <p class="tagline">Elite websites for private medical practices delivered <strong>within a week</strong>, built by a Cambridge student doctor, with just <strong>90 minutes</strong> of your time.
+
+                <strong>Guaranteed</strong> more booked consultations in 90 days, or I keep working for free until we hit your target.</p>
+            
             
             <div class="capacity-badge">2 Openings Left for January</div>
             
@@ -634,7 +660,7 @@
     <section class="content-section dark-mode">
         <div class="container-narrow">
             <span class="section-subheading">The Problem</span>
-            <h2 class="section-heading">Your Website Is Losing Patients (and Money).</h2>
+            <h2 class="section-heading">Is Your Digital Pathway a Barrier to Care?</h2>
             <p class="body-text">Even excellent clinicians lose patients before they ever pick up the phone. Patients decide in seconds.</p>
             
             <ul class="luxury-list">
