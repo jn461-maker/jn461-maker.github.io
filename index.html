@@ -121,7 +121,7 @@
             animation: pulse 8s ease-in-out infinite;
         }
 
-        /* --- HERO SECTION (Refined for Symmetry) --- */
+        /* --- HERO SECTION --- */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -129,7 +129,6 @@
             justify-content: center;
             position: relative;
             padding: 2rem;
-            /* Flexbox logic ensures vertical centering */
         }
         
         .hero-content {
@@ -138,7 +137,6 @@
             text-align: center;
             position: relative;
             z-index: 10;
-            /* Pulling content together */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -149,7 +147,7 @@
             font-size: clamp(3rem, 7vw, 5.5rem);
             font-weight: 700;
             color: var(--white);
-            margin-bottom: 1rem; /* Tighter spacing */
+            margin-bottom: 1rem;
             line-height: 1.05;
             opacity: 0;
             animation: revealName 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
@@ -157,10 +155,9 @@
         }
         
         .tagline {
-            /* Smaller text as requested */
             font-size: clamp(0.95rem, 1.5vw, 1.1rem); 
             color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 1.5rem; /* Reduced margin to pull buttons up */
+            margin-bottom: 1.5rem;
             font-weight: 300;
             max-width: 650px;
             line-height: 1.6;
@@ -241,15 +238,12 @@
             border-color: var(--white);
         }
 
-        /* -------------------------------------------------------------------------- */
-        /* [SMARTPHONE FIX] STICKY BUTTON LOGIC - DISMISSIBLE                         */
-        /* -------------------------------------------------------------------------- */
+        /* --- STICKY BUTTON LOGIC --- */
         .sticky-wrapper {
             position: fixed;
             bottom: max(30px, env(safe-area-inset-bottom) + 20px);
             right: 25px;
             z-index: 9999;
-            /* DEFAULT HIDDEN */
             opacity: 0;
             transform: scale(0.8) translateY(20px);
             pointer-events: none;
@@ -279,10 +273,11 @@
         .sticky-email-btn svg {
             width: 24px;
             height: 24px;
-            fill: var(--navy-dark);
+            fill: none;
+            stroke: var(--navy-dark);
+            stroke-width: 2;
         }
 
-        /* Close Button 'x' */
         .sticky-close {
             position: absolute;
             top: -5px;
@@ -302,10 +297,9 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.3);
         }
 
-        /* DESKTOP ONLY: Hover Tooltip */
         @media (hover: hover) {
             .sticky-wrapper::before {
-                content: 'Email Me';
+                content: 'Book a Call';
                 position: absolute;
                 right: 70px;
                 top: 50%;
@@ -322,23 +316,12 @@
                 white-space: nowrap;
                 box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             }
-
-            .sticky-wrapper:hover::before {
-                opacity: 1;
-                transform: translateY(-50%) translateX(0);
-            }
-            
-            .sticky-email-btn:hover {
-                transform: scale(1.1);
-            }
+            .sticky-wrapper:hover::before { opacity: 1; transform: translateY(-50%) translateX(0); }
+            .sticky-email-btn:hover { transform: scale(1.1); }
         }
 
         /* --- LISTS --- */
-        .luxury-list {
-            list-style: none;
-            margin: 3rem 0;
-        }
-
+        .luxury-list { list-style: none; margin: 3rem 0; }
         .luxury-list li {
             display: flex;
             align-items: flex-start;
@@ -346,10 +329,8 @@
             font-size: 1.15rem;
             line-height: 1.6;
         }
-        
         .dark-mode .luxury-list li { color: var(--text-on-dark); }
         .light-mode .luxury-list li { color: var(--text-light); }
-
         .luxury-list li .dot {
             min-width: 6px;
             height: 6px;
@@ -361,29 +342,42 @@
             box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
         }
 
-        /* --- TESTIMONIAL --- */
-        .testimonial-block {
-            border-left: 2px solid var(--gold);
-            padding: 0 0 0 2rem;
-            margin: 3rem 0;
+        /* --- TESTIMONIALS (Updated) --- */
+        .testimonial-container {
+            display: grid;
+            gap: 3rem;
+            margin: 4rem 0 2rem 0;
+        }
+
+        .testimonial-item {
+            text-align: center;
         }
         
+        .stars {
+            color: var(--gold);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+            display: inline-block;
+        }
+
         .testimonial-text {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-style: italic;
             color: var(--navy-dark);
             line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        /* --- PORTFOLIO (DARK THEME) --- */
+        /* --- PORTFOLIO --- */
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
             margin-top: 5rem;
         }
-
         .portfolio-card {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -395,32 +389,27 @@
             flex-direction: column;
             height: 100%;
         }
-
         .portfolio-card:hover {
             transform: translateY(-10px);
             border-color: var(--gold);
             background: rgba(255, 255, 255, 0.05);
         }
-
         .card-image {
-    height: 240px;
-    background: #111;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* optional: constrain inner visual size */
-.card-image-inner {
-    width: 80px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem; /* for emoji */
-}
-
+            height: 240px;
+            background: #111;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card-image-inner {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
         .start-badge {
             position: absolute;
             top: 1.5rem;
@@ -434,14 +423,12 @@
             z-index: 2;
             letter-spacing: 0.05em;
         }
-
         .card-content {
             padding: 3rem 2.5rem;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
-
         .card-category {
             font-size: 0.75rem;
             text-transform: uppercase;
@@ -450,20 +437,17 @@
             font-weight: 600;
             margin-bottom: 1rem;
         }
-        
         .card-title {
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: var(--white);
         }
-        
         .card-desc {
             color: var(--text-on-dark);
             font-size: 1rem;
             margin-bottom: 2rem;
             font-weight: 300;
         }
-
         .strategy-note {
             font-size: 0.9rem;
             color: rgba(255, 255, 255, 0.6);
@@ -472,7 +456,6 @@
             padding-top: 1.5rem;
             margin-top: auto;
         }
-
         .strategy-label {
             display: block;
             color: var(--white);
@@ -483,14 +466,13 @@
             letter-spacing: 0.05em;
         }
 
-        /* --- PRICING --- */
+        /* --- INVESTMENT & PRICING --- */
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 4rem;
         }
-
         .pricing-card {
             background: var(--white);
             border: 1px solid rgba(0,0,0,0.06);
@@ -501,14 +483,12 @@
             transition: all 0.3s ease;
             position: relative;
         }
-
         .pricing-card.featured {
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
             transform: scale(1.02);
             z-index: 2;
             border-top: 4px solid var(--gold);
         }
-        
         .tier-tagline {
             display: block;
             font-size: 0.75rem;
@@ -518,22 +498,18 @@
             font-weight: 700;
             margin-bottom: 0.5rem;
         }
-
         .tier-name {
             font-family: 'Playfair Display', serif;
             font-size: 1.75rem;
             color: var(--navy-dark);
             margin-bottom: 0.2rem;
         }
-
         .tier-price {
             font-size: 1.25rem;
             font-weight: 600;
             color: var(--text-dark);
             margin-bottom: 0.5rem;
         }
-        
-        /* New Outcome Line Style */
         .tier-outcome {
             font-size: 0.9rem;
             color: var(--navy);
@@ -543,20 +519,17 @@
             border-bottom: 1px solid rgba(0,0,0,0.05);
             line-height: 1.4;
         }
-
         .tier-desc {
             font-size: 1rem;
             color: var(--text-light);
             margin-bottom: 2.5rem;
             line-height: 1.6;
         }
-
         .tier-features {
             list-style: none;
             margin-bottom: 2.5rem;
             flex-grow: 1;
         }
-
         .tier-features li {
             position: relative;
             padding-left: 2rem;
@@ -564,7 +537,6 @@
             font-size: 0.95rem;
             color: var(--text-dark);
         }
-
         .tier-features li::before {
             content: '✓';
             color: var(--gold);
@@ -572,7 +544,6 @@
             left: 0;
             font-weight: bold;
         }
-
         .best-for {
             background: var(--cream);
             padding: 1.5rem;
@@ -580,18 +551,8 @@
             font-size: 0.9rem;
             color: var(--text-dark);
         }
-        
-        /* --- MID PAGE CTA --- */
-        .mid-page-cta {
-            margin-top: 4rem;
-            background: rgba(10, 36, 99, 0.03);
-            /* border-left: 3px solid var(--navy);  <-- REMOVED THIS */
-            padding: 2rem;
-            border-radius: 4px;
-            text-align: center;
-        }
 
-        /* --- PROCESS --- */
+        /* --- PROCESS & FOOTER --- */
         .process-row {
             display: flex;
             align-items: flex-start;
@@ -600,13 +561,11 @@
             border-bottom: 1px solid rgba(255,255,255,0.05);
             padding-bottom: 4rem;
         }
-        
         .process-row:last-child {
           border-bottom: none;
           margin-bottom: 0;
           padding-bottom: 2rem;
         }
-        
         .process-num {
           font-family: 'Playfair Display', serif;
           font-size: 4rem;
@@ -618,11 +577,8 @@
           margin-top: 0;
           width: 100px;
         }
-        .process-row > div:last-child {
-          padding-top: 0.5rem;
-        }
+        .process-row > div:last-child { padding-top: 0.5rem; }
 
-        /* --- FOOTER --- */
         .footer {
             background: var(--navy-dark);
             color: var(--white);
@@ -648,9 +604,12 @@
 <body>
 
     <div class="sticky-wrapper" id="stickyWrapper">
-        <a href="mailto:jn461@cam.ac.uk" class="sticky-email-btn">
+        <a href="https://calendly.com/jn461-cam/30min" class="sticky-email-btn" target="_blank">
             <svg viewBox="0 0 24 24">
-                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
             </svg>
         </a>
         <button class="sticky-close" onclick="document.getElementById('stickyWrapper').style.display='none'" aria-label="Close">×</button>
@@ -659,19 +618,16 @@
     <div class="animated-bg"></div>
     <section class="hero">
         <div class="hero-content">
-            <h1 class="name-reveal">Turn Visitors Into Patients.</h1>
+            <h1 class="name-reveal">Turn Visitors Into Patients <br><span style="color:var(--gold);">in 7 Days.</span></h1>
             
-            <p class="tagline">Elite websites for private medical practices. Designed by a Cambridge student doctor who understands clinical workflows, private patients, and UK regulation.</p>
+            <p class="tagline">Elite websites for private medical practices. Designed by a Cambridge student doctor. Turn your existing site into a clean, modern patient-booking machine with just <strong>90 minutes of your time</strong>.</p>
             
             <div class="capacity-badge">2 Openings Left for January</div>
             
             <div class="hero-btns">
-                <a href="mailto:jn461@cam.ac.uk?subject=Website%20Audit%20Request" class="btn btn-primary">Request Website Audit</a>
+                <a href="https://calendly.com/jn461-cam/30min" target="_blank" class="btn btn-primary">Book a 30-Min Demo Call</a>
                 <a href="#portfolio" class="btn btn-outline">View Portfolio & Case Studies</a>
             </div>
-            
-            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-top: 1.5rem; animation: fadeInUp 1s ease-out 1s forwards; opacity: 0;">
-            </p>
         </div>
     </section>
 
@@ -727,8 +683,16 @@
                 </li>
             </ul>
             
-            <div class="testimonial-block">
-                <p class="testimonial-text">"The summary of salient points, expressed in language to attract the right audience without baffling them with the science, was amazing."</p>
+            <div class="testimonial-container">
+                <div class="testimonial-item">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"The summary of salient points, expressed in language to attract the right audience without baffling them with the science, was amazing."</p>
+                </div>
+                
+                <div class="testimonial-item">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Thoughtful, professional, and brilliant from start to finish."</p>
+                </div>
             </div>
         </div>
     </section>
@@ -745,25 +709,19 @@
 
             <div class="portfolio-grid">
                 <a href="/dianoya" class="portfolio-card">
-                    <span class="start-badge">Start Here</span>
                     <div class="card-image" style="background: linear-gradient(135deg, #020B1C, #1E88E5);">
                         <div class="card-image-inner">
                             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <!-- Outer ring only, transparent centre -->
                                 <circle cx="12" cy="12" r="10" fill="none" stroke="#0DD9C4" stroke-width="2" />
-                                <!-- Solid inner circle -->
                                 <circle cx="12" cy="12" r="4" fill="#2E8AFF" />
                               </svg>
                         </div>
-                    </div>                    <div class="card-content">
+                    </div>                    
+                    <div class="card-content">
                         <div class="card-category">Biotech Innovation</div>
                         <h3 class="card-title">Dianoya Therapeutics</h3>
                         <p class="card-desc">Explaining complex science for non-technical investors.</p>
-                        
-                        <div class="strategy-note">
-                            <span class="strategy-label">Strategic Rationale</span>
-                            Translating density into clarity to secure investment partnerships.
-                        </div>
+                        <div class="strategy-note"><span class="strategy-label">Strategic Rationale</span>Translating density into clarity to secure investment partnerships.</div>
                     </div>
                 </a>
 
@@ -775,11 +733,7 @@
                         <div class="card-category">Cosmetic & Implant Dentistry</div>
                         <h3 class="card-title">Mayfair Dental Atelier</h3>
                         <p class="card-desc">High-end medical platform featuring fluid liquid animations and a 'concierge' user flow.</p>
-                        
-                        <div class="strategy-note">
-                            <span class="strategy-label">Strategic Rationale</span>
-                            Offset luxury "editorial" aesthetics with trust-building data matrices to reassure nervous professionals.
-                        </div>
+                        <div class="strategy-note"><span class="strategy-label">Strategic Rationale</span>Offset luxury "editorial" aesthetics with trust-building data matrices.</div>
                     </div>
                 </a>
 
@@ -791,59 +745,9 @@
                         <div class="card-category">Private Healthcare</div>
                         <h3 class="card-title">Cambridge Core Clinic</h3>
                         <p class="card-desc">Restructured GP site with services and booking emphasised.</p>
-                        
-                        <div class="strategy-note">
-                            <span class="strategy-label">Strategic Rationale</span>
-                            Reduced admin friction by surfacing booking availability immediately.
-                        </div>
+                        <div class="strategy-note"><span class="strategy-label">Strategic Rationale</span>Reduced admin friction by surfacing booking availability immediately.</div>
                     </div>
                 </a>
-
-
-                <!-- a href="/flourish-wellbeing" class="portfolio-card">
-                    <div class="card-image" style="background: linear-gradient(135deg, #2D5F5D, #1A3C3A);">
-                        <div class="card-image-inner">🌱</div>
-                    </div>                    <div class="card-content">
-                        <div class="card-category">Mental Health</div>
-                        <h3 class="card-title">Flourish Wellbeing</h3>
-                        <p class="card-desc">Organised around patient pathways to reduce anxiety.</p>
-                        
-                        <div class="strategy-note">
-                            <span class="strategy-label">Strategic Rationale</span>
-                            Using calming UI and clear pathways to build trust before contact.
-                        </div>
-                    </div>
-                </a><a href="/cambridge-wellness-hub" class="portfolio-card">
-    <div class="card-image" style="background: linear-gradient(135deg, #1B3B5A, #4A90B8);">
-        <div class="card-image-inner">⚕️</div>
-    </div>
-    <div class="card-content">
-        <div class="card-category">Integrative Medicine</div>
-        <h3 class="card-title">Cambridge Wellness Hub</h3>
-        <p class="card-desc">Integrated healthcare combining conventional medicine with holistic wellness.</p>
-        
-        <div class="strategy-note">
-            <span class="strategy-label">Strategic Rationale</span>
-            Unified disjointed service verticals (clinical & holistic) into a single patient journey to increase cross-referrals.
-        </div>
-    </div>
-</a>
-
-<a href="#" class="portfolio-card" style="opacity: 0.7; pointer-events: none; filter: grayscale(10%);">
-    <div class="card-image" style="background: linear-gradient(135deg, #6B46C1, #9333EA);">
-        <div class="card-image-inner">🧬</div>
-    </div>
-    <div class="card-content">
-        <div class="card-category">Health Tech</div>
-        <h3 class="card-title">Coming Soon</h3>
-        <p class="card-desc">Next-generation healthcare innovations focusing on AI diagnostics.</p>
-        
-        <div class="strategy-note">
-            <span class="strategy-label">In Development</span>
-            Prototyping automated triage flows to reduce administrative bottlenecks in high-volume clinics.
-        </div>
-    </div>
-</a><-->
             </div>
         </div>
     </section>
@@ -851,74 +755,92 @@
     <section class="content-section alt-bg">
         <div class="container">
             <div class="text-center" style="max-width: 800px; margin: 0 auto;">
-                <span class="section-subheading">Investment</span>
-                <h2 class="section-heading">Q1 2026 Founding Partner Rates</h2>
-                <p class="body-text" style="margin: 0 auto 1rem auto;">
-                    I'm offering <b>early partner pricing</b> for Q1 2026 at approximately <b>half standard rates</b> while I refine the service with a small group of practices. In exchange, I ask for your feedback, testimonials, and referrals as I build out my portfolio.</p>
-                    <p class="body-text" style="margin: 0 auto 1rem auto;">
-                    One additional monthly booking through your improved digital presence typically covers the entire site investment within <b>three to six months</b>. This means the website essentially <b>pays for itself</b> while continuing to generate new patient inquiries long after that initial period.</p>
-                    <p class="body-text" style="font-size: 0.9rem; margin: 0 auto 3rem auto; color: var(--text-light); text-align: center;">
-                    (Typical consultation value: £2,000–£8,000 over time, depending on specialty)</p>
-                    <p class="body-text" style="font-size: 0.9rem; margin: 0 auto 1rem auto; color: var(--text-light); text-align: center;">
-                    These prices are early partner rates for Q1 2026 only. After that, standard rates will apply and will be higher than the ranges shown.</p>
+                <span class="section-subheading">The Offer</span>
+                <h2 class="section-heading">The "Founding Partner" Protocol</h2>
+                
+                <p class="body-text" style="margin: 0 auto 1.5rem auto;">
+                    I am currently building my core case studies for Q1 2026. I am looking for <b>3 established practices</b> to partner with at significantly reduced rates.
+                </p>
+                <p class="body-text" style="margin: 0 auto 1.5rem auto;">
+                    In exchange for a <b>~50% reduction in fees</b>, I ask for permission to use your results in my portfolio. You get a high-performance asset; I get the data to prove my model.
+                </p>
+
+                <p class="body-text" style="margin: 0 auto 3rem auto;">
+                    Your total time commitment is just <b>~90 Minutes</b>.
+                    <br class="mobile-break">
+                    <b>Day 1 (30 mins) -</b> Onboarding Call.
+                    <br class="mobile-break">
+                    <b>Day 4 (30 mins) -</b> Design Review.
+                    <br class="mobile-break">
+                    <b>Day 7 (30 mins) -</b> Launch & Handover.
+                </p>
+
             </div>
     
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <span class="tier-tagline">Launch</span>
                     <h3 class="tier-name">Foundation Practice</h3>
-                    <div class="tier-price">£1,500–£2,500</div>
-                    <p class="tier-desc">For established practices moving from outdated sites to a modern, patient-centred presence.</p>
+                    <div class="tier-price">£1,500</div>
+                    <div class="tier-outcome">Outcome: Modern legitimacy.</div>
+                    
+                    <p class="tier-desc">Stop losing patients to broken mobile sites. A clean, compliant, responsive upgrade.</p>
     
                     <ul class="tier-features">
-                        <li>Custom design reflecting your specialty</li>
-                        <li>Mobile-responsive build</li>
-                        <li>Integrated booking matched to workflow</li>
-                        <li>GDPR-compliant forms</li>
-                        <li>Core service page structuring</li>
-                        <li>30 days post-launch support</li>
+                        <li>Custom Mobile-First Design</li>
+                        <li><strong>7-Day Turnaround</strong></li>
+                        <li>GDPR-Compliant Forms</li>
+                        <li>Service Page Restructuring</li>
+                        <li>Hosting Setup Included</li>
                     </ul>
     
                     <div class="best-for">
-                        <strong>Best for:</strong> Single-specialty practices with straightforward service offerings.
+                        <strong>Best for:</strong> Solo practitioners needing a professional digital face.
                     </div>
                 </div>
     
                 <div class="pricing-card featured">
                     <span class="tier-tagline">Scale</span>
                     <h3 class="tier-name">Clinical Growth</h3>
-                    <div class="tier-price">£2,500–£4,000</div>
-                    <p class="tier-desc">For practices expanding services or patient base, requiring sophisticated conversion pathways.</p>
+                    <div class="tier-price">£2,800</div>
+                    <div class="tier-outcome">Outcome: <strong>Measurable Enquiry Increase.</strong></div>
+                    
+                    <p class="tier-desc">A complete conversion system designed to capture demand and fill your appointment book.</p>
     
                     <ul class="tier-features">
                         <li><strong>Everything in Foundation, plus:</strong></li>
-                        <li>Multi-service architecture</li>
-                        <li>Advanced booking (calendar sync)</li>
-                        <li>Patient education content strategy</li>
-                        <li>SEO groundwork for local visibility</li>
-                        <li>Custom enquiry flows</li>
-                        <li>60 days post-launch optimisation</li>
+                        <li><strong>7-Day Turnaround</strong></li>
+                        <li>Direct Booking Integration</li>
+                        <li>Copywriting for Conversion</li>
+                        <li>Enquiry Tracking Dashboard</li>
+                        <li style="color: var(--navy); font-weight: 600; margin-top: 1rem; border-top: 1px dashed #ccc; padding-top: 1rem;">
+                            🛡️ 90-Day Performance Promise
+                        </li>
                     </ul>
+                    <p style="font-size: 0.85rem; color: var(--text-light); line-height: 1.4; margin-bottom: 1.5rem;">
+                        <em>If we don't hit our agreed enquiry targets in 90 days, I continue optimisation <b>for free</b> until we do.</em>
+                    </p>
     
                     <div class="best-for">
-                        <strong>Best for:</strong> Multi-clinician practices or clinics adding private services.
+                        <strong>Best for:</strong> Practices spending money on ads or getting organic traffic but low bookings.
                     </div>
                 </div>
     
                 <div class="pricing-card">
                     <span class="tier-tagline">Flagship</span>
                     <h3 class="tier-name">Premium Practice</h3>
-                    <div class="tier-price">£4,000–£6,000</div>
-                    <p class="tier-desc">For high-end practices where patient experience directly impacts conversion of premium services.</p>
+                    <div class="tier-price">£4,800</div>
+                    <div class="tier-outcome">Outcome: Premium Brand Dominance.</div>
+                    
+                    <p class="tier-desc">High-touch design for high-ticket services. Position yourself as the uncontested leader.</p>
     
                     <ul class="tier-features">
                         <li><strong>Everything in Clinical Growth, plus:</strong></li>
-                        <li>Comprehensive brand alignment</li>
-                        <li>Patient portal / secure docs integration</li>
-                        <li>Video content embedding strategy</li>
-                        <li>A/B testing framework</li>
-                        <li>Multi-language support</li>
-                        <li>Priority support for 6 months</li>
+                        <li><strong>7-Day Launch Sprint</strong></li>
+                        <li>Video Content Strategy</li>
+                        <li>Patient Portal Integration</li>
+                        <li>Multi-Language Support</li>
+                        <li>Competitor Analysis</li>
                     </ul>
     
                     <div class="best-for">
@@ -927,14 +849,15 @@
                 </div>
             </div>
     
-            <div class="text-center" style="margin-top: 3rem;">
-                <p class="body-text body-text-center" style="font-weight: 600; color: var(--navy); font-size: 1rem;">
-                    Fixed‑scope, fixed‑fee. No hidden costs or ongoing commitments unless we agree a care plan. Q1 2026 pricing is limited to a small number of founding partner projects and will revert to full rates thereafter.
+            <div class="text-center" style="margin-top: 4rem;">
+                <p class="body-text body-text-center" style="font-weight: 600; color: var(--navy); font-size: 1.1rem;">
+                    Ready to turn visitors into patients?
+                </p>
+                <a href="https://calendly.com/jn461-cam/30min" target="_blank" class="btn btn-primary">Book a Founding Partner Call</a>
+                <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 1rem;">
+                    Strictly limited to 4 practices for January 2026 (2 spaces remaining).
                 </p>
             </div>
-        </div>
-    </section>
-
         </div>
     </section>
 
@@ -971,13 +894,12 @@
 
     <footer class="footer">
         <div class="container-narrow">
-            <div style="font-size: 3rem; margin-bottom: 1.5rem;">🎓</div>
             <h3 style="color: var(--white); margin-bottom: 1.5rem;">About Joseph</h3>
             <p class="body-text" style="color: rgba(255,255,255,0.6); margin-bottom: 3rem;">
                 I’m Joseph Nogbou, a Cambridge medical student and healthcare web design specialist. I help private GPs, aesthetic clinics, and health-tech teams build credibility and grow.
             </p>
             
-            <a href="mailto:jn461@cam.ac.uk" class="btn btn-primary" style="background: var(--white); color: var(--navy-dark); border-color: var(--white); box-shadow: none;">Book a 15-min Consultation</a>
+            <a href="https://calendly.com/jn461-cam/30min" target="_blank" class="btn btn-primary" style="background: var(--white); color: var(--navy-dark); border-color: var(--white); box-shadow: none;">Book a 30-min Consultation</a>
             
             <p style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.3); margin-top: 5rem;">
                 © 2025 Joseph Nogbou – Healthcare Web Design | Cambridge, UK
@@ -991,9 +913,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
 
     <script>
-
-        
-        // Intersection Observer for Animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1003,7 +922,6 @@
             });
         }, { threshold: 0.1 });
         
-        // Animate elements
         document.querySelectorAll('.portfolio-card, .pricing-card, .process-row, .luxury-list li').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
@@ -1011,8 +929,6 @@
             observer.observe(el);
         });
 
-        // [SMART LOGIC] Sticky Button Visibility
-        // Purpose: Ensure sticky button NEVER covers the Hero CTAs on mobile.
         const stickyWrapper = document.getElementById('stickyWrapper');
         const heroSection = document.querySelector('.hero');
 
@@ -1029,7 +945,6 @@
                 threshold: 0,       
                 rootMargin: "-100px 0px 0px 0px"
             });
-
             heroObserver.observe(heroSection);
         }
     </script>
