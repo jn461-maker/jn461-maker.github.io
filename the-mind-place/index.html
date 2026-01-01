@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+
+<html lang="en-GB" class="no-js"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <meta name="description" content="The Mind Place | Integrative Counselling in Cambridge & St. Neots with Deborah Armiger (MBACP). A calm, confidential space for adults navigating anxiety, loss, trauma, and life transitions."> <meta name="author" content="Deborah Armiger"> <meta name="theme-color" content="#7a9b8e">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="[https://themindplace.co.uk/](https://themindplace.co.uk/)">
+<meta property="og:title" content="The Mind Place | Integrative Counselling in Cambridge">
+<meta property="og:description" content="Compassionate, professional therapy for when life feels overwhelming. Based in Bourn (Cambridge) and St. Neots.">
+<meta property="og:image" content="[https://themindplace.co.uk/og-image.jpg](https://themindplace.co.uk/og-image.jpg)">
+
+<title>The Mind Place | Integrative Counselling in Cambridge & St. Neots</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Manrope:wght@300;400;500;600&display=swap');    /* ========================================
+    1. DESIGN TOKENS & VARIABLES
+    ========================================
+    */
+    :root {
+        /* * Color Palette - Preserved from v1 but expanded for utility 
+         * Base: Sage (#7a9b8e), Cream (#f7f4f0), Earth (#9d8b7a)
+         */
+        
+        /* Primary Brand (Sage) */
+        --clr-primary-100: #eef4f2;
+        --clr-primary-200: #dceae5;
+        --clr-primary-300: #b5cdc4;
+        --clr-primary-400: #7a9b8e; /* Main Brand Color */
+        --clr-primary-500: #5a7a6e; /* Darker Sage */
+        --clr-primary-600: #466056;
+        --clr-primary-700: #334840;
+
+        /* Neutral / Backgrounds (Cream/Warm) */
+        --clr-bg-body: #ffffff;
+        --clr-bg-surface: #ffffff;
+        --clr-bg-soft: #f7f4f0; /* Cream */
+        --clr-bg-muted: #ede7df; /* Darker Cream */
+        
+        /* Accents (Warm/Earth) */
+        --clr-accent-light: #d4c4b0;
+        --clr-accent-main: #9d8b7a;
+        --clr-accent-dark: #7a6b5d;
+
+        /* Text Colors */
+        --clr-text-heading: #2d3436;
+        --clr-text-body: #4a5558;
+        --clr-text-muted: #636e72;
+        --clr-text-on-primary: #ffffff;
+
+        /* Feedback */
+        --clr-error: #d35454;
+        --clr-success: #5a7a6e;
+
+        /* Typography */
+/* Typography */
+        --ff-heading: 'Lora', serif;   /* Changed from Cormorant */
+        --ff-body: 'Manrope', sans-serif; /* Changed from Inter */
+
+        /* Fluid Typography Scale */
+        --fs-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+        --fs-sm: clamp(0.875rem, 0.85rem + 0.125vw, 1rem);
+        --fs-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+        --fs-lg: clamp(1.125rem, 1.1rem + 0.5vw, 1.35rem);
+        --fs-xl: clamp(1.35rem, 1.25rem + 1vw, 1.75rem);
+        --fs-2xl: clamp(1.75rem, 1.5rem + 1.5vw, 2.25rem);
+        --fs-3xl: clamp(2.25rem, 2rem + 2vw, 3rem);
+        --fs-4xl: clamp(2.75rem, 2.5rem + 3vw, 4.5rem);
+
+        /* Spacing Grid */
+        --space-2xs: 0.25rem;
+        --space-xs: 0.5rem;
+        --space-sm: 0.75rem;
+        --space-md: 1.5rem;
+        --space-lg: 2rem;
+        --space-xl: 3rem;
+        --space-2xl: 5rem;
+        --space-3xl: 8rem;
+
+        /* Layout */
+        --container-width: 1280px;
+        --container-padding: 1.5rem;
+        --header-height: 80px;
+        --border-radius-sm: 4px;
+        --border-radius-md: 12px;
+        --border-radius-lg: 24px;
+        --border-radius-xl: 40px;
+        --border-radius-pill: 999px;
+
+        /* Shadows & Depth */
+        --shadow-xs: 0 1px 2px rgba(45, 52, 54, 0.05);
+        --shadow-sm: 0 4px 6px -1px rgba(45, 52, 54, 0.05), 0 2px 4px -1px rgba(45, 52, 54, 0.03);
+        --shadow-md: 0 10px 15px -3px rgba(45, 52, 54, 0.05), 0 4px 6px -2px rgba(45, 52, 54, 0.025);
+        --shadow-lg: 0 20px 25px -5px rgba(45, 52, 54, 0.05), 0 10px 10px -5px rgba(45, 52, 54, 0.02);
+        --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+
+        /* Transitions */
+        --ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+        --ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+        --duration-short: 200ms;
+        --duration-medium: 400ms;
+        --duration-long: 700ms;
+    }
+
+    /* ========================================
+    2. RESET & BASE STYLES
+    ========================================
+    */
+    *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+        font-family: var(--ff-body);
+        font-size: var(--fs-base);
+        line-height: 1.7;
+        color: var(--clr-text-body);
+        background-color: var(--clr-bg-body);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
+    }
+
+    /* Focus States for Accessibility */
+    :focus-visible {
+        outline: 2px solid var(--clr-primary-400);
+        outline-offset: 4px;
+        border-radius: 2px;
+    }
+
+    /* Selection */
+    ::selection {
+        background-color: var(--clr-primary-200);
+        color: var(--clr-primary-700);
+    }
+
+    /* Typography Defaults */
+    h1, h2, h3, h4, h5, h6 {
+        font-family: var(--ff-heading);
+        color: var(--clr-text-heading);
+        line-height: 1.2;
+        font-weight: 500;
+    }
+
+    h1 { font-size: var(--fs-4xl); font-weight: 500; letter-spacing: -0.02em; }
+    h2 { font-size: var(--fs-3xl); letter-spacing: -0.01em; margin-bottom: var(--space-md); }
+    h3 { font-size: var(--fs-xl); margin-bottom: var(--space-xs); }
+    h4 { font-size: var(--fs-lg); margin-bottom: var(--space-2xs); font-family: var(--ff-body); font-weight: 600; }
+
+    p { margin-bottom: var(--space-md); max-width: 70ch; }
+    p.lead { font-size: var(--fs-lg); line-height: 1.6; color: var(--clr-text-heading); }
+    
+    a { color: inherit; text-decoration: none; transition: color var(--duration-short) ease; }
+    ul, ol { list-style: none; }
+    img, svg { display: block; max-width: 100%; height: auto; }
+    
+    /* ========================================
+    3. UTILITY CLASSES
+    ========================================
+    */
+    .container {
+        width: 100%;
+        max-width: var(--container-width);
+        margin: 0 auto;
+        padding: 0 var(--container-padding);
+    }
+
+    .section {
+        padding: var(--space-2xl) 0;
+        position: relative;
+    }
+
+    .section--cream { background-color: var(--clr-bg-soft); }
+    .section--white { background-color: var(--clr-bg-surface); }
+    .section--sage { background-color: var(--clr-primary-400); color: var(--clr-text-on-primary); }
+    
+    /* Text Alignments */
+    .text-center { text-align: center; }
+    .text-sage { color: var(--clr-primary-500); }
+    .text-muted { color: var(--clr-text-muted); }
+    .fw-medium { font-weight: 500; }
+    
+    /* Spacers */
+    .mb-sm { margin-bottom: var(--space-sm); }
+    .mb-md { margin-bottom: var(--space-md); }
+    .mb-lg { margin-bottom: var(--space-lg); }
+    .mb-xl { margin-bottom: var(--space-xl); }
+
+    /* Visually Hidden (Screen Readers) */
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+
+    /* ========================================
+    4. COMPONENTS
+    ========================================
+    */
+
+    /* Buttons */
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 1rem 2rem;
+        font-family: var(--ff-body);
+        font-size: var(--fs-sm);
+        font-weight: 500;
+        border-radius: var(--border-radius-pill);
+        transition: all var(--duration-short) var(--ease-out);
+        cursor: pointer;
+        border: 1px solid transparent;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .btn--primary {
+        background-color: var(--clr-primary-400);
+        color: var(--clr-white);
+        box-shadow: var(--shadow-sm);
+    }
+
+    .btn--primary:hover {
+        background-color: var(--clr-primary-500);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+    }
+
+    .btn--secondary {
+        background-color: transparent;
+        color: var(--clr-primary-500);
+        border-color: var(--clr-primary-400);
+    }
+
+    .btn--secondary:hover {
+        background-color: var(--clr-primary-100);
+        color: var(--clr-primary-600);
+        transform: translateY(-1px);
+    }
+
+    .btn--white {
+        background-color: var(--clr-white);
+        color: var(--clr-primary-600);
+        box-shadow: var(--shadow-sm);
+    }
+    
+    .btn--white:hover {
+        background-color: var(--clr-primary-100);
+        transform: translateY(-2px);
+    }
+
+    .btn--text {
+        padding: 0;
+        background: none;
+        color: var(--clr-primary-500);
+        border-radius: 0;
+        border-bottom: 1px solid currentColor;
+    }
+    
+    .btn--text:hover {
+        color: var(--clr-primary-700);
+        transform: none;
+    }
+
+    /* Badge/Tag */
+    .badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        background-color: var(--clr-primary-100);
+        color: var(--clr-primary-700);
+        font-size: var(--fs-xs);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        border-radius: var(--border-radius-pill);
+        margin-bottom: var(--space-md);
+    }
+
+    /* ========================================
+    5. HEADER & NAVIGATION
+    ========================================
+    */
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(122, 155, 142, 0.1);
+        transition: transform var(--duration-medium) ease;
+    }
+
+    .header.is-hidden {
+        transform: translateY(-100%);
+    }
+
+    .header__inner {
+        height: var(--header-height);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-family: var(--ff-heading);
+        font-size: var(--fs-lg);
+        font-weight: 600;
+        color: var(--clr-primary-600);
+        z-index: 1002; /* Above mobile menu */
+    }
+
+    .logo__mark {
+        width: 32px;
+        height: 32px;
+        background: linear-gradient(135deg, var(--clr-primary-300), var(--clr-primary-400));
+        border-radius: 50%;
+        position: relative;
+    }
+
+    .logo__mark::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 14px;
+        height: 14px;
+        background-color: var(--clr-white);
+        border-radius: 50%;
+        opacity: 0.9;
+    }
+
+    .nav__list {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .nav__link {
+        font-size: var(--fs-sm);
+        font-weight: 500;
+        color: var(--clr-text-heading);
+        position: relative;
+    }
+
+    .nav__link:not(.btn):hover {
+        color: var(--clr-primary-500);
+    }
+
+    .nav__link:not(.btn)::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--clr-primary-400);
+        transition: width var(--duration-short) ease;
+    }
+
+    .nav__link:not(.btn):hover::after {
+        width: 100%;
+    }
+
+    /* Mobile Hamburger */
+    .nav-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        width: 44px;
+        height: 44px;
+        z-index: 1002;
+        color: var(--clr-primary-600);
+    }
+
+    /* ========================================
+    6. HERO SECTION
+    ========================================
+    */
+    .hero {
+        padding-top: calc(var(--header-height) + var(--space-xl));
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        background: radial-gradient(circle at 100% 0%, rgba(122, 155, 142, 0.1) 0%, rgba(255,255,255,0) 50%);
+    }
+
+    .hero__grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: var(--space-2xl);
+        align-items: center;
+    }
+
+    .hero__content {
+        position: relative;
+        z-index: 10;
+    }
+
+    .hero__title em {
+        color: var(--clr-primary-500);
+        font-style: italic;
+    }
+
+    .hero__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: var(--space-lg);
+    }
+
+    .hero__visual {
+        position: relative;
+    }
+
+    /* Abstract shapes for hero */
+    .shape-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 100%; /* Aspect Ratio 1:1 */
+    }
+
+    .shape {
+        position: absolute;
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+        animation: morph 8s ease-in-out infinite alternate;
+    }
+
+    .shape--main {
+        background-color: var(--clr-primary-200);
+        width: 90%;
+        height: 90%;
+        top: 5%;
+        left: 5%;
+        z-index: 1;
+    }
+
+    .shape--accent {
+        background-color: var(--clr-accent-light);
+        width: 40%;
+        height: 40%;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        opacity: 0.6;
+        animation-duration: 10s;
+        animation-direction: reverse;
+    }
+
+    /* ========================================
+    7. ABOUT SECTION (INTRO)
+    ========================================
+    */
+    .intro-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-xl);
+        align-items: center;
+    }
+
+    .profile-card {
+        background: var(--clr-white);
+        padding: var(--space-lg);
+        border-radius: var(--border-radius-lg);
+        box-shadow: var(--shadow-lg);
+        position: relative;
+    }
+    
+    .profile-card::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        bottom: -10px;
+        left: -10px;
+        border: 1px solid var(--clr-primary-200);
+        border-radius: var(--border-radius-lg);
+        z-index: -1;
+    }
+
+    .profile-card blockquote {
+        font-family: var(--ff-heading);
+        font-size: var(--fs-lg);
+        font-style: italic;
+        color: var(--clr-primary-600);
+        margin-bottom: var(--space-md);
+        line-height: 1.4;
+    }
+
+    .profile-card cite {
+        display: block;
+        font-style: normal;
+        font-weight: 600;
+        font-size: var(--fs-sm);
+        color: var(--clr-text-heading);
+    }
+
+    /* ========================================
+    8. SERVICES (CARDS)
+    ========================================
+    */
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: var(--space-lg);
+    }
+
+    .service-card {
+        background-color: var(--clr-white);
+        border-radius: var(--border-radius-md);
+        padding: var(--space-lg);
+        box-shadow: var(--shadow-sm);
+        transition: transform var(--duration-medium) var(--ease-out), box-shadow var(--duration-medium) var(--ease-out);
+        border: 1px solid rgba(0,0,0,0.03);
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .service-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, var(--clr-primary-300), var(--clr-primary-400));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform var(--duration-medium) var(--ease-out);
+    }
+
+    .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .service-card:hover::before {
+        transform: scaleX(1);
+    }
+
+    .service-icon {
+        width: 48px;
+        height: 48px;
+        background-color: var(--clr-primary-100);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--clr-primary-600);
+        margin-bottom: var(--space-md);
+    }
+
+    .service-card h3 {
+        font-size: var(--fs-lg);
+        margin-bottom: var(--space-sm);
+    }
+
+    .service-card p {
+        font-size: var(--fs-sm);
+        color: var(--clr-text-muted);
+        flex-grow: 1;
+    }
+
+    .tag-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: var(--space-md);
+    }
+
+    .tag {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.75rem;
+        background-color: var(--clr-bg-soft);
+        color: var(--clr-text-muted);
+        border-radius: 4px;
+    }
+
+    /* ========================================
+    9. PROCESS / HOW IT WORKS
+    ========================================
+    */
+    .process-steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: var(--space-lg);
+        counter-reset: steps;
+    }
+
+    .step {
+        position: relative;
+        padding-left: var(--space-xl);
+    }
+
+    .step::before {
+        counter-increment: steps;
+        content: counter(steps);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 32px;
+        height: 32px;
+        background-color: var(--clr-primary-400);
+        color: var(--clr-white);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-family: var(--ff-body);
+    }
+    
+    .step::after {
+        /* Vertical Line */
+        content: '';
+        position: absolute;
+        left: 15px;
+        top: 40px;
+        bottom: -2rem; /* Extend to next item */
+        width: 2px;
+        background-color: var(--clr-primary-200);
+    }
+
+    .step:last-child::after {
+        display: none;
+    }
+
+    /* ========================================
+    10. CREDENTIALS
+    ========================================
+    */
+    .credentials-bar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--space-xl);
+        opacity: 0.7;
+        filter: grayscale(100%);
+        transition: filter 0.3s;
+    }
+    
+    .credentials-bar:hover {
+        filter: grayscale(0);
+    }
+
+    .credential-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 600;
+        color: var(--clr-text-heading);
+    }
+    
+    .credential-icon {
+         width: 24px;
+         height: 24px;
+         fill: var(--clr-primary-500);
+    }
+
+    /* ========================================
+    11. FEES & LOCATION
+    ========================================
+    */
+    .logistics-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-lg);
+    }
+
+    .info-card {
+        background-color: var(--clr-bg-soft);
+        padding: var(--space-lg);
+        border-radius: var(--border-radius-md);
+    }
+    
+    .info-card.highlight {
+        background-color: var(--clr-white);
+        border: 1px solid var(--clr-primary-200);
+    }
+
+    .info-list li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.75rem;
+        color: var(--clr-text-body);
+    }
+
+    .info-list li::before {
+        content: '•';
+        color: var(--clr-primary-400);
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+    }
+    
+    .price-large {
+        font-size: var(--fs-2xl);
+        font-family: var(--ff-heading);
+        color: var(--clr-primary-600);
+        margin-bottom: 0.25rem;
+    }
+
+    /* ========================================
+    12. FAQs
+    ========================================
+    */
+    .faq-item {
+        border-bottom: 1px solid var(--clr-primary-200);
+    }
+
+    .faq-button {
+        width: 100%;
+        text-align: left;
+        background: none;
+        border: none;
+        padding: 1.5rem 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        font-family: var(--ff-heading);
+        font-size: var(--fs-lg);
+        color: var(--clr-text-heading);
+        transition: color 0.2s;
+    }
+
+    .faq-button:hover {
+        color: var(--clr-primary-500);
+    }
+
+    .faq-icon {
+        width: 24px;
+        height: 24px;
+        position: relative;
+        flex-shrink: 0;
+    }
+
+    .faq-icon::before, .faq-icon::after {
+        content: '';
+        position: absolute;
+        background-color: var(--clr-primary-400);
+        border-radius: 2px;
+        transition: transform 0.3s ease;
+    }
+
+    /* Horizontal bar */
+    .faq-icon::before {
+        width: 100%;
+        height: 2px;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+
+    /* Vertical bar */
+    .faq-icon::after {
+        width: 2px;
+        height: 100%;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+    }
+
+    .faq-button[aria-expanded="true"] .faq-icon::after {
+        transform: translateX(-50%) rotate(90deg); /* Makes it flat */
+    }
+    
+    .faq-button[aria-expanded="true"] .faq-icon {
+        transform: rotate(180deg);
+    }
+
+    .faq-panel {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+
+    .faq-content {
+        padding-bottom: 1.5rem;
+        color: var(--clr-text-body);
+        line-height: 1.6;
+    }
+
+    /* ========================================
+    13. CONTACT FORM
+    ========================================
+    */
+    .contact-layout {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: var(--space-2xl);
+    }
+    
+    @media (max-width: 900px) {
+        .contact-layout { grid-template-columns: 1fr; }
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+        position: relative;
+    }
+
+    .form-label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-size: var(--fs-sm);
+        font-weight: 500;
+        color: var(--clr-text-heading);
+    }
+
+    .form-input, .form-textarea {
+        width: 100%;
+        padding: 1rem;
+        background-color: var(--clr-bg-soft);
+        border: 1px solid transparent;
+        border-radius: var(--border-radius-sm);
+        font-family: var(--ff-body);
+        font-size: 1rem;
+        transition: all 0.2s;
+    }
+
+    .form-textarea {
+        min-height: 150px;
+        resize: vertical;
+    }
+
+    .form-input:focus, .form-textarea:focus {
+        outline: none;
+        background-color: var(--clr-white);
+        border-color: var(--clr-primary-400);
+        box-shadow: 0 0 0 3px var(--clr-primary-200);
+    }
+    
+    .form-message {
+        font-size: var(--fs-sm);
+        margin-top: 0.5rem;
+        display: none;
+    }
+    
+    .form-group.error .form-input { border-color: var(--clr-error); }
+    .form-group.error .form-message { display: block; color: var(--clr-error); }
+    
+    .form-success-message {
+        background-color: var(--clr-primary-100);
+        color: var(--clr-primary-700);
+        padding: 1.5rem;
+        border-radius: var(--border-radius-md);
+        text-align: center;
+        display: none;
+        border: 1px solid var(--clr-primary-300);
+    }
+    
+    .form-success-message.visible { display: block; animation: fadeIn 0.5s; }
+
+    /* ========================================
+    14. FOOTER
+    ========================================
+    */
+    .footer {
+        background-color: var(--clr-text-heading);
+        color: var(--clr-accent-light);
+        padding: var(--space-xl) 0;
+        font-size: var(--fs-sm);
+    }
+    
+    .footer a { color: var(--clr-white); opacity: 0.8; }
+    .footer a:hover { opacity: 1; text-decoration: underline; }
+
+    .footer__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: var(--space-lg);
+        margin-bottom: var(--space-lg);
+    }
+
+    .footer__divider {
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding-top: var(--space-md);
+        margin-top: var(--space-md);
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+        font-size: var(--fs-xs);
+        opacity: 0.6;
+    }
+
+    /* ========================================
+    15. ANIMATIONS & RESPONSIVE
+    ========================================
+    */
+    @keyframes morph {
+        0% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+        100% { border-radius: 40% 60% 30% 70% / 60% 30% 70% 40%; }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Intersection Observer Classes */
+    .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+    }
+
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Mobile Responsive Overrides */
+    @media (max-width: 900px) {
+        .hero__grid { grid-template-columns: 1fr; text-align: center; gap: var(--space-lg); }
+        .hero__content { order: 2; }
+        .hero__visual { order: 1; max-width: 400px; margin: 0 auto; }
+        .hero__actions { justify-content: center; }
+        .intro-grid { grid-template-columns: 1fr; }
+        .step::after { left: -10px; display: none; } /* Remove vertical line on mobile */
+        .step { padding-left: 0; margin-bottom: var(--space-lg); }
+        .step::before { position: relative; margin-bottom: 0.5rem; }
+        
+        /* Mobile Nav */
+        .nav-toggle { display: block; }
+        .nav__list {
+            position: fixed;
+            top: var(--header-height);
+            left: 0;
+            width: 100%;
+            height: calc(100vh - var(--header-height));
+            background-color: var(--clr-bg-body);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+            border-top: 1px solid var(--clr-bg-muted);
+        }
+        .nav__list.open { transform: translateX(0); }
+        .nav__list li { width: 100%; text-align: center; }
+        .nav__link { display: block; padding: 1rem; font-size: var(--fs-lg); }
+        .btn-nav-mobile { display: inline-block; margin-top: 1rem; width: 80%; }
+    }
+
+    /* Reduced Motion Preference */
+    @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+    
+    /* Print Styles */
+    @media print {
+        .header, .hero__visual, .footer, .contact, .btn { display: none; }
+        body { font-size: 12pt; color: #000; background: #fff; }
+        h1, h2, h3 { page-break-after: avoid; }
+        .service-card { border: 1px solid #ddd; page-break-inside: avoid; }
+    }
+</style>
+</head> <body id="top">
+
+<!-- a href="#main-content" class="sr-only" style="position:fixed; top:10px; left:10px; z-index:9999; background:white; padding:10px; color:black; width:auto; height:auto; clip:auto;">Skip to main content</a>
+<-->
+<header class="header" id="header">
+    <div class="container header__inner">
+        <a href="#top" class="logo" aria-label="The Mind Place Home">
+            <span>The Mind Place</span>
+        </a>
+
+        <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+
+        <nav class="nav" id="primary-navigation">
+            <ul class="nav__list">
+                <li><a href="#about" class="nav__link">About</a></li>
+                <li><a href="#services" class="nav__link">Services</a></li>
+                <li><a href="#process" class="nav__link">Process</a></li>
+                <li><a href="#fees" class="nav__link">Fees & Locations</a></li>
+                <li><a href="#faqs" class="nav__link">FAQs</a></li>
+                <li><a href="#contact" class="btn btn--primary btn-nav-mobile" style="color:#000000;">Book a Session</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main id="main-content">
+    
+    <section class="hero section--cream" aria-labelledby="hero-title">
+        <div class="container hero__grid">
+            <div class="hero__content reveal">
+                <span class="badge">Integrative Counselling in Cambridge</span>
+                <h1 id="hero-title" class="hero__title mb-md">
+                    Finding your ground when life feels <em>heavy.</em>
+                </h1>
+                <p class="hero__text lead mb-lg">
+                    You don't have to carry the overwhelm alone. The Mind Place offers a calm, safe space to untangle your thoughts, feel truly heard, and find a way forward - at your own pace.
+                </p>
+                <div class="hero__actions">
+<a href="#contact" class="btn btn--primary" style="color:#000000;">
+  Book an Introductory Session
+</a>                    <a href="#services" class="btn btn--secondary">Explore How I Can Help</a>
+                </div>
+            </div>
+            
+            <div class="hero__visual reveal">
+                <div class="shape-container">
+                    <div class="shape shape--main"></div>
+                    <div class="shape shape--accent"></div>
+                    <div style="position:absolute; top:15%; left:15%; width:70%; height:70%; background: url('data:image/svg+xml;utf8,<svg xmlns=\'[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)\' viewBox=\'0 0 100 100\' fill=\'none\' stroke=\'%235a7a6e\' stroke-width=\'0.5\' opacity=\'0.2\'><path d=\'M10 50 Q 25 25 50 50 T 90 50\' /></svg>') no-repeat center/cover; opacity: 0.8; z-index:3;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--white">
+        <div class="container text-center reveal">
+            <h2 class="mb-md">A different kind of support for those used to coping alone</h2>
+            <p class="lead" style="margin: 0 auto; max-width: 800px;">
+                Many of the people I work with are "copers." You might be the one holding it together for everyone else, the professional who feels like an imposter, or simply someone who feels they "should" be able to manage. But even the strongest people need a place to put down the weight.
+            </p>
+        </div>
+    </section>
+
+  <section id="about" class="section section--cream">
+        <div class="container intro-grid">
+            <div class="about__text reveal">
+                <span class="text-sage fw-medium mb-sm display-block">About Deborah</span>
+                <h2>Hello, I'm Deborah.</h2>
+                <p>I am a qualified Integrative Counsellor (MBACP) working in Cambridgeshire and online. "Integrative" simply means I don't believe in a one-size-fits-all approach to therapy.</p>
+                <p>I combine different therapeutic methods - drawing from psychodynamic insights, person-centred empathy, and practical tools - to suit <em>you</em>. Sometimes we might explore your past to understand present patterns; other times, we focus on strategies to get you through the week.</p>
+                <p>Having worked in both community services and the corporate world, I understand the unique pressures of modern life. I offer a down-to-earth, non-judgemental partnership where you can be your messy, unpolished self.</p>
+                
+                <div class="credentials-bar mt-lg" style="justify-content: flex-start; margin-top: 2rem;">
+                     <div class="credential-item" title="Registered Member of BACP">
+                         <svg class="credential-icon" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                         <span>BACP Registered</span>
+                     </div>
+                     <div class="credential-item" title="CPCAB Level 4 Diploma">
+                         <svg class="credential-icon" viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+                         <span>CPCAB Level 4</span>
+                     </div>
+                </div>
+            </div>
+            
+            <div class="about__visual reveal" style="display: flex; flex-direction: column; height: 100%;">
+                <!-- Image placeholder for Deborah's photo -->
+                <div style="background-color: var(--clr-primary-200); border-radius: var(--border-radius-lg); flex: 1; margin-bottom: var(--space-lg); display: flex; align-items: center; justify-content: center; color: var(--clr-primary-600); min-height: 300px;">
+                    <span style="font-style: italic;">Image of Deborah</span>
+                </div>
+                
+                <div class="profile-card">
+                    <blockquote>
+                        "My goal is to provide the safe harbour you need to pause, reflect, and eventually set sail again with renewed clarity."
+                    </blockquote>
+                    <cite>— Deborah Armiger</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+<section id="services" class="section section--white">
+    <div class="container">
+        <div class="text-center mb-xl reveal">
+            <span class="text-sage fw-medium">Areas of Focus</span>
+            <h2>How I Can Help</h2>
+        </div>
+    </div>
+    
+    <!-- This breaks out of container to span full width -->
+    <div style="width: 100%; text-align: center; margin-bottom: var(--space-xl);">
+        <p style="max-width: none; margin: 0; padding: 0 var(--container-padding);">While I work with the whole person, not just a list of symptoms, these are common areas where I offer specialised support.</p>
+    </div>
+    
+    <div class="container">
+        <div class="services-grid">
+                <article class="service-card reveal">
+                    <h3>Anxiety & Stress</h3>
+                    <p>When worry feels constant or physical symptoms (racing heart, sleeplessness) take over. We'll work to understand the root causes and build a toolkit for regulation.</p>
+                    <div class="tag-list">
+                        <span class="tag">Panic Attacks</span>
+                        <span class="tag">Burnout</span>
+                        <span class="tag">GAD</span>
+                    </div>
+                </article>
+
+                <article class="service-card reveal">
+                    <h3>Loss & Bereavement</h3>
+                    <p>Grief doesn't follow a timeline. Whether it's the death of a loved one, baby loss, or the end of a relationship, I offer a patient space to process the pain.</p>
+                    <div class="tag-list">
+                        <span class="tag">Grief</span>
+                        <span class="tag">Miscarriage</span>
+                        <span class="tag">Life Changes</span>
+                    </div>
+                </article>
+
+                <article class="service-card reveal">
+                    <h3>Identity & Self-Esteem</h3>
+                    <p>Feeling like you don't fit in, or struggling with your sense of self? We can explore perfectionism, confidence, and the "masks" we wear to survive.</p>
+                    <div class="tag-list">
+                        <span class="tag">Confidence</span>
+                        <span class="tag">Identity</span>
+                        <span class="tag">Imposter Syndrome</span>
+                    </div>
+                </article>
+
+                <article class="service-card reveal">
+                    <h3>Relationship Issues</h3>
+                    <p>Navigating conflict, betrayal, or recurring patterns in relationships. I help you understand your needs and boundaries, whether you attend individually or for perspective.</p>
+                    <div class="tag-list">
+                        <span class="tag">Family</span>
+                        <span class="tag">Divorce</span>
+                        <span class="tag">Betrayal</span>
+                    </div>
+                </article>
+                
+                <article class="service-card reveal">
+                    <h3>Trauma & Safety</h3>
+                    <p>Working gently with past experiences that shape your present. We move at a pace that ensures you feel safe and in control, never pushing before you are ready.</p>
+                    <div class="tag-list">
+                        <span class="tag">PTSD</span>
+                        <span class="tag">Abuse</span>
+                        <span class="tag">Childhood Trauma</span>
+                    </div>
+                </article>
+                
+                 <article class="service-card reveal">
+                    <h3>Neurodiversity</h3>
+                    <p>Support for living with ADHD, Autism, or chronic conditions. I offer a neuro-affirming space to discuss the unique challenges and strengths you possess.</p>
+                    <div class="tag-list">
+                        <span class="tag">ADHD</span>
+                        <span class="tag">Autism</span>
+                        <span class="tag">Chronic Illness</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="section section--cream">
+        <div class="container">
+            <div class="text-center mb-xl reveal">
+                <h2>How Counselling Works</h2>
+                <p>Starting can be the hardest part. Here is a transparent look at the process.</p>
+            </div>
+
+            <div class="process-steps">
+                <div class="step reveal">
+                    <h3>Reach Out</h3>
+                    <p>Send a message via the form below or email me. I aim to respond within 24 hours to arrange a brief, free initial chat or book a first session.</p>
+                </div>
+                <div class="step reveal">
+                    <h3>The First Session</h3>
+                    <p>A 50-minute space to tell your story. I'll ask about what brought you here, and you can ask me how I work. There is no pressure to commit immediately.</p>
+                </div>
+                <div class="step reveal">
+                    <h3>Ongoing Support</h3>
+                    <p>We meet weekly or fortnightly. You are in the driving seat - we work on what feels important to you that week, reviewing our progress regularly.</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-lg reveal">
+                <a href="#contact" class="btn btn--secondary">Take the first step</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="fees" class="section section--white">
+        <div class="container">
+            <div class="logistics-grid">
+                <div class="reveal">
+                    <h2 class="mb-md">Locations & Availability</h2>
+                    <div class="info-card mb-md">
+                        <h3 class="h4">Cambridge Country Club (Fridays)</h3>
+                        <p class="text-muted text-sm">Bourn, Cambridge, CB23 2UE</p>
+                        <p>A peaceful, private setting with free parking and wheelchair access.</p>
+                    </div>
+                    <div class="info-card mb-md">
+                        <h3 class="h4">St. Neots & Online</h3>
+                        <p class="text-muted text-sm">PE19 Area / Zoom</p>
+                        <p>I have a base in St. Neots and offer flexible online sessions throughout the week, including some evenings.</p>
+                    </div>
+                </div>
+
+                <div class="reveal">
+                    <h2 class="mb-md">Fees</h2>
+                    <div class="info-card highlight">
+                        <div class="price-large">£60 – £75</div>
+                        <p class="text-muted mb-md">Per 50-minute session</p>
+                        
+                        <ul class="info-list">
+                            <li><strong>Individual Counselling:</strong> Standard rate.</li>
+                            <li><strong>Concessions:</strong> Limited spaces available for students and trainee counsellors (please ask).</li>
+                            <li><strong>Payment:</strong> Via bank transfer prior to the session.</li>
+                            <li><strong>Cancellation:</strong> 24-hour notice required.</li>
+                        </ul>
+                        
+                        <p class="text-sm mt-md text-muted">
+                            *I hold a limited number of concessionary slots. If cost is a barrier, please mention this in your enquiry.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faqs" class="section section--cream">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="text-center mb-xl reveal">Frequently Asked Questions</h2>
+            
+            <div class="reveal">
+                <div class="faq-item">
+                    <button class="faq-button" aria-expanded="false" aria-controls="faq-1">
+                        How many sessions will I need?
+                        <div class="faq-icon"></div>
+                    </button>
+                    <div id="faq-1" class="faq-panel">
+                        <div class="faq-content">
+                            This is entirely up to you. Some clients find 6–12 sessions helpful for a specific issue, while others value open-ended, long-term support for deeper exploration. We will review our work together regularly.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-button" aria-expanded="false" aria-controls="faq-2">
+                        Is everything confidential?
+                        <div class="faq-icon"></div>
+                    </button>
+                    <div id="faq-2" class="faq-panel">
+                        <div class="faq-content">
+                            Yes. I abide by the BACP Ethical Framework. What we discuss is confidential, with the rare legal exception where there is a serious risk of harm to yourself or others. I will explain this fully in our first session.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-button" aria-expanded="false" aria-controls="faq-3">
+                        Do you work with young people?
+                        <div class="faq-icon"></div>
+                    </button>
+                    <div id="faq-3" class="faq-panel">
+                        <div class="faq-content">
+                            I work exclusively with adults (18+). If you are looking for support for a child or teenager, I recommend looking for a specialist child & adolescent counsellor via the BACP directory.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-button" aria-expanded="false" aria-controls="faq-4">
+                        Is online counselling effective?
+                        <div class="faq-icon"></div>
+                    </button>
+                    <div id="faq-4" class="faq-panel">
+                        <div class="faq-content">
+                            Absolutely. Many clients find the comfort of their own home helps them open up. I use a secure, encrypted platform to ensure privacy during our video calls.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section section--white">
+        <div class="container contact-layout">
+            <div class="contact-info reveal">
+                <span class="badge">Get in Touch</span>
+                <h2 class="mb-md">Start the conversation</h2>
+                <p class="mb-lg">
+                    I know reaching out can feel daunting. I am here to listen without judgement. Please use the form to ask a question or book a session.
+                </p>
+                
+                <div class="contact-details">
+                    <div class="mb-md">
+                        <h4 class="text-sage">Email</h4>
+                        <a href="mailto:deborah@themindplace.co.uk" class="btn--text">deborah@themindplace.co.uk</a>
+                    </div>
+                    <div class="mb-md">
+                        <h4 class="text-sage">Phone</h4>
+                        <a href="tel:07356293802" class="btn--text">07356 293 802</a>
+                        <p class="text-sm text-muted mt-2">Please leave a voicemail if I am in a session.</p>
+                    </div>
+                </div>
+
+                <div class="mt-xl" style="background: var(--clr-primary-100); border-radius: var(--border-radius-md); padding: 0.5rem;">
+    <h4 class="text-sm mb-2">Crisis Support</h4>
+    <p class="text-xs">
+        I am not an emergency service. If you are in immediate danger or need urgent help, please contact your GP, visit A&E, or call Samaritans on 116 123 (24/7).
+    </p>
+</div>
+            </div>
+
+            <div class="contact-form-wrapper reveal">
+                <form id="contactForm" class="contact-form" novalidate>
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" id="name" name="name" class="form-input" required aria-required="true">
+                        <span class="form-message">Please enter your name.</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-input" required aria-required="true">
+                        <span class="form-message">Please enter a valid email address.</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Phone Number (Optional)</label>
+                        <input type="tel" id="phone" name="phone" class="form-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">How can I help?</label>
+                        <textarea id="message" name="message" class="form-textarea" required aria-required="true" placeholder="Briefly describe what you are looking for..."></textarea>
+                        <span class="form-message">Please enter a message.</span>
+                    </div>
+
+                    <button type="submit" class="btn btn--primary" style="width: 100%;">Send Confidential Enquiry</button>
+                </form>
+                
+                <div id="formSuccess" class="form-success-message">
+                    <h3>Thank you for reaching out</h3>
+                    <p>I have received your message and will get back to you securely via email within 24 hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer__grid">
+            <div>
+                <h3 style="color:var(--clr-white); font-size: 1.25rem; margin-bottom: 1rem; font-family: var(--ff-heading);">The Mind Place</h3>
+                <p>Integrative Counselling in Cambridge & St. Neots.</p>
+            </div>
+            <div>
+                <h4 style="color:var(--clr-white); font-size: 1rem; margin-bottom: 0.5rem;">Quick Links</h4>
+                <ul style="line-height: 2;">
+                    <li><a href="#about">About Deborah</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#fees">Fees</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color:var(--clr-white); font-size: 1rem; margin-bottom: 0.5rem;">Professional Standards</h4>
+                <p>Deborah Armiger is a Registered Member of the BACP (British Association for Counselling and Psychotherapy) and adheres to their Ethical Framework.</p>
+            </div>
+        </div>
+        
+        <div class="footer__divider">
+            <span>&copy; 2026 The Mind Place. All rights reserved.</span>
+            <div style="display:flex; gap: 1rem;">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        // 1. Navigation Toggle (Mobile)
+        const navToggle = document.querySelector('.nav-toggle');
+        const navList = document.querySelector('.nav__list');
+        const header = document.querySelector('.header');
+        const body = document.body;
+
+        navToggle.addEventListener('click', () => {
+            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', !isExpanded);
+            navList.classList.toggle('open');
+            
+            // Prevent body scroll when menu is open on mobile
+            if (!isExpanded) {
+                body.style.overflow = 'hidden';
+            } else {
+                body.style.overflow = '';
+            }
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.nav__link, .btn-nav-mobile').forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.setAttribute('aria-expanded', 'false');
+                navList.classList.remove('open');
+                body.style.overflow = '';
+            });
+        });
+
+        // 2. Sticky Header Hide/Show on Scroll
+        let lastScrollY = window.scrollY;
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > lastScrollY && window.scrollY > 100) {
+                header.classList.add('is-hidden');
+            } else {
+                header.classList.remove('is-hidden');
+            }
+            lastScrollY = window.scrollY;
+        }, { passive: true });
+
+        // 3. Smooth Scroll for Anchors (Polyfill-like behavior)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    const headerOffset = 80;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                    
+                    // Focus management for accessibility
+                    targetElement.setAttribute('tabindex', '-1');
+                    targetElement.focus({preventScroll: true});
+                }
+            });
+        });
+
+        // 4. Intersection Observer for Fade-in Animations
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // 5. FAQ Accordion Logic
+        const faqButtons = document.querySelectorAll('.faq-button');
+        
+        faqButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const expanded = button.getAttribute('aria-expanded') === 'true';
+                const panel = document.getElementById(button.getAttribute('aria-controls'));
+                
+                // Close all others (Accordion behavior)
+                faqButtons.forEach(otherBtn => {
+                    if (otherBtn !== button) {
+                        otherBtn.setAttribute('aria-expanded', 'false');
+                        const otherPanel = document.getElementById(otherBtn.getAttribute('aria-controls'));
+                        otherPanel.style.maxHeight = null;
+                    }
+                });
+
+                // Toggle current
+                button.setAttribute('aria-expanded', !expanded);
+                if (!expanded) {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                } else {
+                    panel.style.maxHeight = null;
+                }
+            });
+        });
+
+        // 6. Contact Form Validation
+        const form = document.getElementById('contactForm');
+        const successMessage = document.getElementById('formSuccess');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let isValid = true;
+
+            // Simple Validation Logic
+            const inputs = form.querySelectorAll('input[required], textarea[required]');
+            
+            inputs.forEach(input => {
+                const group = input.closest('.form-group');
+                if (!input.value.trim()) {
+                    isValid = false;
+                    group.classList.add('error');
+                } else if (input.type === 'email' && !validateEmail(input.value)) {
+                    isValid = false;
+                    group.classList.add('error');
+                } else {
+                    group.classList.remove('error');
+                }
+            });
+
+            if (isValid) {
+                // Simulate AJAX request
+                const btn = form.querySelector('button[type="submit"]');
+                const originalText = btn.textContent;
+                btn.textContent = 'Sending...';
+                btn.disabled = true;
+
+                setTimeout(() => {
+                    form.style.display = 'none';
+                    successMessage.classList.add('visible');
+                    // Reset for demo purposes
+                    form.reset();
+                }, 1500);
+            }
+        });
+
+        // Remove error on input
+        form.querySelectorAll('input, textarea').forEach(input => {
+            input.addEventListener('input', () => {
+                input.closest('.form-group').classList.remove('error');
+            });
+        });
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        // Remove no-js class
+        document.documentElement.classList.remove('no-js');
+    });
+</script>
+</body> </html>
