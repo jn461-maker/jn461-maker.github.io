@@ -3,10 +3,10 @@
 <html lang="en-GB" class="no-js"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <meta name="description" content="The Mind Place | Integrative Counselling in Cambridge & St. Neots with Deborah Armiger (MBACP). A calm, confidential space for adults navigating anxiety, loss, trauma, and life transitions."> <meta name="author" content="Deborah Armiger"> <meta name="theme-color" content="#7a9b8e">
 
 <meta property="og:type" content="website">
-<meta property="og:url" content="[https://themindplace.co.uk/](https://themindplace.co.uk/)">
+<meta property="og:url" content="https://themindplace.co.uk/">
 <meta property="og:title" content="The Mind Place | Integrative Counselling in Cambridge">
 <meta property="og:description" content="Compassionate, professional therapy for when life feels overwhelming. Based in Bourn (Cambridge) and St. Neots.">
-<meta property="og:image" content="[https://themindplace.co.uk/og-image.jpg](https://themindplace.co.uk/og-image.jpg)">
+<meta property="og:image" content="https://themindplace.co.uk/og-image.jpg">
 
 <title>The Mind Place | Integrative Counselling in Cambridge & St. Neots</title>
 
@@ -181,6 +181,9 @@
     
     /* Text Alignments */
     .text-center { text-align: center; }
+    /* Ensure paragraphs in centered containers are also centered */
+    .text-center p { margin-left: auto; margin-right: auto; }
+    
     .text-sage { color: var(--clr-primary-500); }
     .text-muted { color: var(--clr-text-muted); }
     .fw-medium { font-weight: 500; }
@@ -390,6 +393,9 @@
         height: 44px;
         z-index: 1002;
         color: var(--clr-primary-600);
+        padding: 0;
+        align-items: center;
+        justify-content: center;
     }
 
     /* ========================================
@@ -397,10 +403,12 @@
     ========================================
     */
     .hero {
-        padding-top: calc(var(--header-height) + var(--space-xl));
+        /* Adjusted specifically to center content between navbar and bottom of screen */
+        padding-top: var(--header-height);
         min-height: 100vh;
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        justify-content: center; /* This ensures equal distance from nav to content top and content bottom to screen bottom */
         overflow: hidden;
         background: radial-gradient(circle at 100% 0%, rgba(122, 155, 142, 0.1) 0%, rgba(255,255,255,0) 50%);
     }
@@ -410,6 +418,8 @@
         grid-template-columns: 1.2fr 0.8fr;
         gap: var(--space-2xl);
         align-items: center;
+        /* Ensure the grid height takes up the visible space minus header for centering calculation */
+        min-height: calc(100vh - var(--header-height)); 
     }
 
     .hero__content {
@@ -944,13 +954,17 @@
         .step { padding-left: 0; margin-bottom: var(--space-lg); }
         .step::before { position: relative; margin-bottom: 0.5rem; }
         
+        /* FIX: Stack Fees & Locations on mobile */
+        .logistics-grid { grid-template-columns: 1fr; }
+
         /* Mobile Nav */
-        .nav-toggle { display: block; }
+        .nav-toggle { display: flex; } /* Changed from block to flex for centering */
         .nav__list {
             position: fixed;
             top: var(--header-height);
             left: 0;
-            width: 100%;
+            right: 0; /* Ensures full width */
+            width: 100vw; /* Explicitly full viewport width */
             height: calc(100vh - var(--header-height));
             background-color: var(--clr-bg-body);
             flex-direction: column;
@@ -959,6 +973,7 @@
             transform: translateX(100%);
             transition: transform 0.3s ease-in-out;
             border-top: 1px solid var(--clr-bg-muted);
+            padding: 0; /* Remove default padding to ensure centering */
         }
         .nav__list.open { transform: translateX(0); }
         .nav__list li { width: 100%; text-align: center; }
@@ -987,8 +1002,6 @@
 </style>
 </head> <body id="top">
 
-<!-- a href="#main-content" class="sr-only" style="position:fixed; top:10px; left:10px; z-index:9999; background:white; padding:10px; color:black; width:auto; height:auto; clip:auto;">Skip to main content</a>
-<-->
 <header class="header" id="header">
     <div class="container header__inner">
         <a href="#top" class="logo" aria-label="The Mind Place Home">
@@ -1021,7 +1034,6 @@
     <section class="hero section--cream" aria-labelledby="hero-title">
         <div class="container hero__grid">
             <div class="hero__content reveal">
-                <span class="badge">Integrative Counselling in Cambridge</span>
                 <h1 id="hero-title" class="hero__title mb-md">
                     Finding your ground when life feels <em>heavy.</em>
                 </h1>
@@ -1039,7 +1051,7 @@
                 <div class="shape-container">
                     <div class="shape shape--main"></div>
                     <div class="shape shape--accent"></div>
-                    <div style="position:absolute; top:15%; left:15%; width:70%; height:70%; background: url('data:image/svg+xml;utf8,<svg xmlns=\'[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)\' viewBox=\'0 0 100 100\' fill=\'none\' stroke=\'%235a7a6e\' stroke-width=\'0.5\' opacity=\'0.2\'><path d=\'M10 50 Q 25 25 50 50 T 90 50\' /></svg>') no-repeat center/cover; opacity: 0.8; z-index:3;"></div>
+                    <div style="position:absolute; top:15%; left:15%; width:70%; height:70%; background: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\' fill=\'none\' stroke=\'%235a7a6e\' stroke-width=\'0.5\' opacity=\'0.2\'><path d=\'M10 50 Q 25 25 50 50 T 90 50\' /></svg>') no-repeat center/cover; opacity: 0.8; z-index:3;"></div>
                 </div>
             </div>
         </div>
@@ -1076,7 +1088,6 @@
             </div>
             
             <div class="about__visual reveal" style="display: flex; flex-direction: column; height: 100%;">
-                <!-- Image placeholder for Deborah's photo -->
                 <div style="background-color: var(--clr-primary-200); border-radius: var(--border-radius-lg); flex: 1; margin-bottom: var(--space-lg); display: flex; align-items: center; justify-content: center; color: var(--clr-primary-600); min-height: 300px;">
                     <span style="font-style: italic;">Image of Deborah</span>
                 </div>
@@ -1098,7 +1109,6 @@
         </div>
     </div>
     
-    <!-- This breaks out of container to span full width -->
     <div style="width: 100%; text-align: center; margin-bottom: var(--space-xl);">
         <p style="max-width: none; margin: 0; padding: 0 var(--container-padding);">While I work with the whole person, not just a list of symptoms, these are common areas where I offer specialised support.</p>
     </div>
@@ -1345,7 +1355,7 @@
                         <span class="form-message">Please enter a message.</span>
                     </div>
 
-                    <button type="submit" class="btn btn--primary" style="width: 100%;">Send Confidential Enquiry</button>
+                    <button type="submit" class="btn btn--primary" style="width: 100%; color: #000000;">Send Confidential Enquiry</button>
                 </form>
                 
                 <div id="formSuccess" class="form-success-message">
