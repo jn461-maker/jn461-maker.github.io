@@ -22,41 +22,55 @@
  */
 
 :root {
-  /* Primary (Orange/Coral) */
-  --clr-primary-100: #fff5f2;
-  --clr-primary-200: #ffe8df;
-  --clr-primary-300: #ffd1bf;
-  --clr-primary-400: #ffb399;
-  --clr-primary-500: #f27f57;    /* Main Brand Primary */
-  --clr-primary-600: #e06840;
-  --clr-primary-700: #c5542e;
-  --clr-primary-800: #a3401f;
-  --clr-primary-900: #7d2e14;
+  /* Logo palette — all colors explicitly defined */
+  --palette-main:     #F27C52;     /* Core brand orange-coral */
+  --palette-cream:    #FAF1E5;     /* Signature soft background */
+  --palette-amber:    #F6B82F;     /* Energetic warm accent */
+  --palette-yellow-d: #FBD262;     /* Sunny mid-yellow */
+  --palette-yellow-l: #FDDE83;     /* Fresh light yellow */
+  --palette-green-l:  #2E837E;     /* Teal-green – fresh & calming */
+  --palette-green-d:  #1F6563;     /* Deep sage-green – grounding */
 
-  /* Neutral / Backgrounds (Cream & Warm Neutrals) */
-  --clr-bg-body:    #ffffff;
-  --clr-bg-surface: #ffffff;
-  --clr-bg-soft:    #faf1e5;     /* Main Cream / Secondary */
-  --clr-bg-muted:   #f0e4d3;     /* Slightly deeper cream/beige */
-  --clr-bg-subtle:  #e6d6c1;     /* For cards, borders, dividers */
+  /* Primary family – now more vibrant, less purely orange */
+  --clr-primary-100:  #fffaf2;
+  --clr-primary-200:  var(--palette-yellow-l);   /* #FDDE83 – bright lift */
+  --clr-primary-300:  var(--palette-yellow-d);   /* #FBD262 – warm glow */
+  --clr-primary-400:  var(--palette-amber);      /* #F6B82F – strong highlight */
+  --clr-primary-500:  var(--palette-main);       /* #F27C52 – main brand */
+  --clr-primary-600:  #da6a44;
+  --clr-primary-700:  #c55a38;
+  --clr-primary-800:  #a8492c;
 
-  /* Accents (Darker orange-toned neutrals & warm grays) */
-  --clr-accent-light: #fedac7;
-  --clr-accent-main:  #f8b89a;
-  --clr-accent-dark:  #e89b76;
+  /* Accents – full rainbow from logo, very vibrant usage */
+  --clr-accent-light:   var(--palette-yellow-l);  /* #FDDE83 – highlights, hovers */
+  --clr-accent-main:    var(--palette-amber);     /* #F6B82F – key CTAs, links */
+  --clr-accent-dark:    var(--palette-green-l);   /* #2E837E – contrast accent */
+  --clr-accent-deep:    var(--palette-green-d);   /* #1F6563 – deeper emphasis */
 
-  /* Text Colors - Black → Gray → White scale */
-  --clr-text-heading: #1f1f1f;     /* Near-black for titles */
-  --clr-text-body:    #333333;     /* Main readable text */
-  --clr-text-muted:   #5c5c5c;     /* Secondary / meta text */
-  --clr-text-subtle:  #808080;     /* Hints, placeholders, disabled */
-  --clr-text-on-primary: #ffffff;  /* Text on orange background */
-  --clr-text-on-cream:   #2b2b2b;  /* Dark text on cream #FAF1E5 */
+  /* Brand green aliases (used heavily for headings, icons, secondary buttons) */
+  --clr-brand-green:    var(--palette-green-l);   /* #2E837E */
+  --clr-brand-dark:     var(--palette-green-d);   /* #1F6563 */
 
-  /* Status / Semantic aliases (optional but useful) */
-  --clr-success: #e07f40;   /* slightly desaturated orange variant */
-  --clr-warning: #f2a157;
-  --clr-error:   #e55a4a;
+  /* Neutrals / Backgrounds */
+  --clr-bg-body:      #ffffff;
+  --clr-bg-surface:   #ffffff;
+  --clr-bg-soft:      var(--palette-cream);       /* #FAF1E5 – main soft bg */
+  --clr-bg-muted:     #f8f0e3;                    /* very light cream */
+  --clr-bg-subtle:    #f0e4d4;
+
+  /* Text */
+  --clr-text-heading: var(--clr-brand-dark);      /* Dark green headings – strong shift */
+  --clr-text-body:    #2e2e2e;
+  --clr-text-muted:   #5c5c5c;
+  --clr-text-subtle:  #7a7a7a;
+  --clr-text-on-primary: #ffffff;
+  --clr-text-on-cream:   #1e1e1e;
+  --clr-text-on-green:   #ffffff;                 /* for green backgrounds */
+
+  /* Status – full logo color usage */
+  --clr-success: var(--palette-green-l);          /* #2E837E */
+  --clr-warning: var(--palette-amber);            /* #F6B82F */
+  --clr-error:   #e06050;                         /* softer red-orange */
 
         /* Typography */
 /* Typography */
@@ -185,7 +199,7 @@
 
     .section--cream { background-color: var(--clr-bg-soft); }
     .section--white { background-color: var(--clr-bg-surface); }
-    .section--sage { background-color: var(--clr-primary-400); color: var(--clr-text-on-primary); }
+    .section--sage { background-color: var(--palette-green-d); color: var(--clr-text-on-primary); }
     
     /* Text Alignments */
     .text-center { text-align: center; }
@@ -316,10 +330,6 @@
         transition: transform var(--duration-medium) ease;
     }
 
-    .header.is-hidden {
-        transform: translateY(-100%);
-    }
-
     .header__inner {
         height: var(--header-height);
         display: flex;
@@ -327,38 +337,31 @@
         justify-content: space-between;
     }
 
-    .logo {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        font-family: var(--ff-heading);
-        font-size: var(--fs-lg);
-        font-weight: 600;
-        color: var(--clr-primary-600);
-        z-index: 1002; /* Above mobile menu */
-    }
+    /* Add this to control the image size */
+.logo img {
+    height: 64px; /* Sets a fixed height so it fits the navbar perfectly */
+    width: auto;  /* Maintains the logo's aspect ratio */
+    object-fit: contain;
+}
 
-    .logo__mark {
-        width: 32px;
-        height: 32px;
-        background: linear-gradient(135deg, var(--clr-primary-300), var(--clr-primary-400));
-        border-radius: 50%;
-        position: relative;
-    }
+/* This is the missing piece */
+.logo span {
+    display: flex;          /* Forces the image and text into a row */
+    align-items: center;    /* Vertically centers the text with the logo */
+    gap: 5px;              /* Adds space between the logo and "The Mind Place" */
+    /* CHANGE FONT HERE */
+    font-family: var(--ff-heading); /* Sets font to Lora */
+    font-weight: 600;               /* Lora looks better slightly bolder */
+    font-size: 1.2rem;              /* Optional: Lora is often smaller than sans-serifs, so this bumps it up slightly */
+    letter-spacing: -0.01em;        /* Tightens it up slightly for a 'logo' look */
+}
 
-    .logo__mark::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 14px;
-        height: 14px;
-        background-color: var(--clr-white);
-        border-radius: 50%;
-        opacity: 0.9;
-    }
-
+/* Optional: Ensure the text color looks right and isn't underlined */
+.logo {
+    font: "lora";
+    text-decoration: none;
+    color: var(--palette-main); /* Change this to your preferred text color (e.g., #0e4d46) */
+}
     .nav__list {
         display: flex;
         align-items: center;
@@ -483,6 +486,84 @@
         opacity: 0.6;
         animation-duration: 10s;
         animation-direction: reverse;
+    }
+
+    /* ========================================
+       HERO IMAGE MODIFICATION
+    ======================================== */
+    .hero__image {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: auto;
+        max-height: 95%; /* Adjusts to fit within the shape container */
+        z-index: 5;      /* Ensures it sits on top of the shapes */
+        object-fit: contain;
+        filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
+    }
+
+    /* ========================================
+       TESTIMONIALS SECTION
+    ======================================== */
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--space-lg);
+        margin-top: var(--space-lg);
+    }
+
+    .testimonial-card {
+        background-color: var(--clr-white);
+        padding: var(--space-lg);
+        border-radius: var(--border-radius-lg);
+        box-shadow: var(--shadow-sm);
+        border: 1px solid rgba(122, 155, 142, 0.1);
+        display: flex;
+        flex-direction: column;
+        transition: transform var(--duration-medium) ease;
+    }
+
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+    }
+
+    .testimonial-quote {
+        font-family: var(--ff-heading);
+        font-size: var(--fs-lg);
+        font-style: italic;
+        color: var(--clr-text-body);
+        margin-bottom: var(--space-md);
+        line-height: 1.5;
+    }
+
+    .testimonial-quote::before {
+        content: '“';
+        font-size: 3rem;
+        line-height: 0;
+        vertical-align: -0.4rem;
+        color: var(--clr-primary-300);
+        margin-right: 0.25rem;
+    }
+
+    .testimonial-author {
+        margin-top: auto;
+        font-weight: 600;
+        color: var(--clr-primary-600);
+        font-family: var(--ff-body);
+        font-size: var(--fs-sm);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .testimonial-author::before {
+        content: '';
+        display: block;
+        width: 30px;
+        height: 1px;
+        background-color: var(--clr-primary-300);
     }
 
     /* ========================================
@@ -905,19 +986,19 @@
     
     /* Specific styles to ensure white text on Sage background */
     #insights .video-card {
-        background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent */
+        background-color: var(--palette-cream); /* Semi-transparent */
         border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: var(--border-radius-md);
         overflow: hidden;
         box-shadow: var(--shadow-md);
         transition: transform 0.3s ease;
         cursor: pointer;
-        color: #ffffff; /* Force white text */
+        color: var(--palette-green-d); /* Force green text */
     }
 
     #insights .video-card:hover {
         transform: translateY(-5px);
-        background-color: rgba(255, 255, 255, 0.2);
+        background-color: var(--palette-cream); /* Semi-transparent */
     }
     
     /* Ensure headers inside the card are white */
@@ -970,6 +1051,13 @@
         border: 1px solid #ffffff;
         color: #ffffff;
     }
+
+    #insights .btn--orange {
+        background-color: var(--palette-main);
+        color: #ffffff;
+    }
+
+
     
     #insights .btn--white-outline:hover {
         background-color: #ffffff;
@@ -1168,7 +1256,8 @@
 <header class="header" id="header">
     <div class="container header__inner">
         <a href="#top" class="logo" aria-label="The Mind Place Home">
-            <span>The Mind Place</span>
+            <span><img src="mindplacelogo.png" alt="The Mind Place">The Mind Place</span>
+            
         </a>
 
         <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation">
@@ -1181,14 +1270,15 @@
 
         <nav class="nav" id="primary-navigation">
             <ul class="nav__list">
-                <li><a href="#about" class="nav__link">About</a></li>
-                <li><a href="#services" class="nav__link">Services</a></li>
-                <li><a href="#process" class="nav__link">Process</a></li>
-                <li><a href="#insights" class="nav__link">Insights</a></li>
-                <li><a href="#fees" class="nav__link">Fees</a></li>
-                <li><a href="#resources" class="nav__link">Resources</a></li>
-                <li><a href="#contact" class="btn btn--primary btn-nav-mobile" style="color:#000000;">Book a Session</a></li>
-            </ul>
+    <li><a href="#about" class="nav__link">About</a></li>
+    <li><a href="#services" class="nav__link">Services</a></li>
+    <li><a href="#testimonials" class="nav__link">Testimonials</a></li>
+    <li><a href="#process" class="nav__link">Process</a></li>
+    <li><a href="#insights" class="nav__link">Insights</a></li>
+    <li><a href="#fees" class="nav__link">Fees</a></li>
+    <li><a href="#resources" class="nav__link">Resources</a></li>
+    <li><a href="#contact" class="btn btn--primary btn-nav-mobile" style="color:#000000;">Book a Session</a></li>
+</ul>
         </nav>
     </div>
 </header>
@@ -1210,12 +1300,27 @@
             </div>
             
             <div class="hero__visual reveal">
-                <div class="shape-container">
-                    <div class="shape shape--main"></div>
-                    <div class="shape shape--accent"></div>
-                    <div style="position:absolute; top:15%; left:15%; width:70%; height:70%; background: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\' fill=\'none\' stroke=\'%235a7a6e\' stroke-width=\'0.5\' opacity=\'0.2\'><path d=\'M10 50 Q 25 25 50 50 T 90 50\' /></svg>') no-repeat center/cover; opacity: 0.8; z-index:3;"></div>
-                </div>
-            </div>
+    <div class="shape-container">
+        <div class="shape shape--main"></div>
+        <div class="shape shape--accent"></div>
+<img 
+    src="deborah.jpg" 
+    alt="Deborah Armiger" 
+    style="
+        position: absolute; 
+        top: 10%; 
+        left: 10%; 
+        width: 80%; 
+        height: 80%; 
+        object-fit: cover; 
+        border-radius: 45% 55% 40% 60% / 50% 60% 40% 50%; 
+        z-index: 5; 
+        box-shadow: var(--shadow-lg);
+    "
+>        
+        <div style="position:absolute; top:15%; left:15%; width:70%; height:70%; background: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\' fill=\'none\' stroke=\'%235a7a6e\' stroke-width=\'0.5\' opacity=\'0.2\'><path d=\'M10 50 Q 25 25 50 50 T 90 50\'/></svg>') no-repeat center/contain;"></div>
+    </div>
+</div>
         </div>
     </section>
 
@@ -1340,6 +1445,39 @@
         </div>
     </section>
 
+<section id="testimonials" class="section section--cream">
+    <div class="container">
+        <div class="text-center mb-xl reveal">
+            <span class="badge">Kind Words</span>
+            <h2 class="section-title">Client Stories</h2>
+            <p class="section-subtitle">A few reflections from those I’ve worked with.</p>
+        </div>
+
+        <div class="testimonials-grid reveal">
+            <div class="testimonial-card">
+                <blockquote class="testimonial-quote">
+                    I felt heard for the first time in years. Deborah provided a safe harbour where I could finally unpack my anxiety without fear of judgment.
+                </blockquote>
+                <cite class="testimonial-author">Sarah J.</cite>
+            </div>
+
+            <div class="testimonial-card">
+                <blockquote class="testimonial-quote">
+                    The tools we practiced have become part of my daily life. I no longer feel controlled by my past, but empowered to shape my future.
+                </blockquote>
+                <cite class="testimonial-author">Mark T.</cite>
+            </div>
+
+            <div class="testimonial-card">
+                <blockquote class="testimonial-quote">
+                    Gentle, professional, and incredibly insightful. The space Deborah holds is truly transformative. I can't recommend her enough.
+                </blockquote>
+                <cite class="testimonial-author">Emma R.</cite>
+            </div>
+        </div>
+    </div>
+</section>
+
     <section id="process" class="section section--cream">
         <div class="container">
             <div class="text-center mb-xl reveal">
@@ -1371,7 +1509,7 @@
     <section id="insights" class="section section--sage">
         <div class="container">
             <div class="text-center mb-xl reveal">
-                <span class="text-white fw-medium mb-sm display-block" style="opacity: 0.9;">Video Insights</span>
+                <span class="text-white fw-medium mb-sm display-block" style="opacity: 0.9; color: var(--palette-yellow-l)">Video Insights</span>
                 <h2 style="color: white;">Short Reflections</h2>
                 <p style="color: white; max-width: 600px; margin: 0 auto;">A collection of short videos where I discuss common themes in therapy, answering your questions and demystifying the process.</p>
             </div>
@@ -1386,8 +1524,8 @@
                         </div>
                     </div>
                     <div class="video-card__body">
-                        <h4 class="h5" style="color: white;">Why do we feel 'Imposter Syndrome'?</h4>
-                        <p class="text-sm text-muted mb-0" style="color: white;">Exploring the feeling of not being enough.</p>
+                        <h4 class="h5" style="color: var(--palette-green-d);">Why do we feel 'Imposter Syndrome'?</h4>
+                        <p class="text-sm text-muted mb-0" style="color: var(--palette-green-d);">Exploring the feeling of not being enough.</p>
                     </div>
                 </div>
 
@@ -1400,8 +1538,8 @@
                         </div>
                     </div>
                     <div class="video-card__body">
-                        <h4 class="h5" style="color: white;">Anxiety vs. Nervousness</h4>
-                        <p class="text-sm text-muted mb-0" style="color: white;">How to tell the difference and when to seek help.</p>
+                        <h4 class="h5" style="color: var(--palette-green-d);">Anxiety vs. Nervousness</h4>
+                        <p class="text-sm text-muted mb-0" style="color: var(--palette-green-d);">How to tell the difference and when to seek help.</p>
                     </div>
                 </div>
 
@@ -1414,14 +1552,14 @@
                         </div>
                     </div>
                     <div class="video-card__body">
-                        <h4 class="h5" style="color: white;">What happens in the first session?</h4>
-                        <p class="text-sm text-muted mb-0" style="color: white;">A walkthrough of the intake process to reduce fear.</p>
+                        <h4 class="h5" style="color: var(--palette-green-d);">What happens in the first session?</h4>
+                        <p class="text-sm text-muted mb-0" style="color: var(--palette-green-d);">A walkthrough of the intake process to reduce fear.</p>
                     </div>
                 </div>
             </div>
             
             <div class="text-center mt-lg reveal">
-                <a href="#" class="btn btn--white-outline" style="margin-top: var(--space-xl);">View more on Instagram</a>
+                <a href="#" class="btn btn--orange" style="margin-top: var(--space-xl);">View more on Instagram</a>
             </div>
         </div>
     </section>
