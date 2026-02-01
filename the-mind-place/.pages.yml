@@ -1,1 +1,55 @@
+media:
+  input: assets/uploads
+  output: /assets/uploads
+  categories:
+    - uploads
 
+content:
+  - name: settings
+    label: Global Settings
+    type: file
+    path: _data/settings.yml
+    fields:
+      - name: hero_title
+        label: Hero Title
+        type: string
+      - name: hero_image
+        label: Hero Image
+        type: image # <--- Allows image upload
+      - name: hero_video_url
+        label: Featured Video URL (YouTube/Vimeo)
+        type: string # <--- Safer for video hosting
+      # OR if you really need file upload for small clips:
+      # - name: intro_video
+      #   label: Intro Video File (Max 10MB)
+      #   type: file
+
+  - name: services
+    label: Services
+    type: list
+    path: _data/services.yml
+    fields:
+      - name: title
+        label: Service Name
+        type: string
+      - name: icon
+        label: Service Icon
+        type: image # <--- Client can upload custom icons
+      - name: description
+        label: Description
+        type: rich-text
+
+  - name: videos
+    label: Video Gallery
+    type: list
+    path: _data/videos.yml
+    fields:
+      - name: title
+        label: Video Title
+        type: string
+      - name: thumbnail
+        label: Video Thumbnail
+        type: image
+      - name: video_url
+        label: YouTube/Vimeo Link
+        type: string
