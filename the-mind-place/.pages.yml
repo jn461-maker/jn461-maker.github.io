@@ -1,6 +1,6 @@
 media:
-  input: assets/uploads
-  output: /assets/uploads
+  input: assets/images
+  output: /assets/images
   categories:
     - uploads
 
@@ -13,16 +13,15 @@ content:
       - name: hero_title
         label: Hero Title
         type: string
-      - name: hero_image
-        label: Hero Image
-        type: image # <--- Allows image upload
-      - name: hero_video_url
-        label: Featured Video URL (YouTube/Vimeo)
-        type: string # <--- Safer for video hosting
-      # OR if you really need file upload for small clips:
-      # - name: intro_video
-      #   label: Intro Video File (Max 10MB)
-      #   type: file
+      - name: hero_subtitle
+        label: Hero Subtitle
+        type: text
+      - name: email
+        label: Email Address
+        type: string
+      - name: phone
+        label: Phone Number
+        type: string
 
   - name: services
     label: Services
@@ -32,24 +31,21 @@ content:
       - name: title
         label: Service Name
         type: string
-      - name: icon
-        label: Service Icon
-        type: image # <--- Client can upload custom icons
       - name: description
         label: Description
         type: rich-text
+      - name: icon
+        label: Icon Name (e.g., user, leaf)
+        type: string
 
-  - name: videos
-    label: Video Gallery
+  - name: testimonials
+    label: Testimonials
     type: list
-    path: _data/videos.yml
+    path: _data/testimonials.yml
     fields:
-      - name: title
-        label: Video Title
+      - name: author
+        label: Client Name
         type: string
-      - name: thumbnail
-        label: Video Thumbnail
-        type: image
-      - name: video_url
-        label: YouTube/Vimeo Link
-        type: string
+      - name: quote
+        label: Testimonial
+        type: text
