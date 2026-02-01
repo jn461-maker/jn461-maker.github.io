@@ -1,1 +1,6 @@
-
+- title: "Individual Therapy"
+  description: "One-to-one sessions focusing on anxiety..."
+  icon: "user"
+- title: "Walk & Talk"
+  description: "Therapy in nature..."
+  icon: "leaf"
