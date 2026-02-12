@@ -338,24 +338,23 @@
     }
 
     /* Add this to control the image size */
+/* Update these two blocks in your CSS */
+
 .logo img {
-    height: 64px; /* Sets a fixed height so it fits the navbar perfectly */
-    width: auto;  /* Maintains the logo's aspect ratio */
+    height: 80px; /* Increased from 64px */
+    width: auto;
     object-fit: contain;
 }
 
-/* This is the missing piece */
 .logo span {
-    display: flex;          /* Forces the image and text into a row */
-    align-items: center;    /* Vertically centers the text with the logo */
-    gap: 5px;              /* Adds space between the logo and "The Mind Place" */
-    /* CHANGE FONT HERE */
-    font-family: var(--ff-heading); /* Sets font to Lora */
-    font-weight: 600;               /* Lora looks better slightly bolder */
-    font-size: 1.2rem;              /* Optional: Lora is often smaller than sans-serifs, so this bumps it up slightly */
-    letter-spacing: -0.01em;        /* Tightens it up slightly for a 'logo' look */
+    display: flex;
+    align-items: center;
+    gap: 10px;          /* Slightly more space between icon and text */
+    font-family: var(--ff-heading);
+    font-weight: 700;   /* Made slightly bolder */
+    font-size: 1.6rem;  /* Increased from 1.2rem */
+    letter-spacing: -0.01em;
 }
-
 /* Optional: Ensure the text color looks right and isn't underlined */
 .logo {
     font: "lora";
@@ -1143,6 +1142,31 @@
         opacity: 0.6;
     }
 
+    /* Footer Accreditations Section */
+.footer__accreditations {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;               /* Space between logos */
+    margin-top: 2rem;        /* Space above the logos */
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15); /* Subtle divider line */
+    flex-wrap: wrap;
+}
+
+.footer__logo {
+    display: block;
+    max-height: 60px;        /* Ensures logos aren't too huge */
+    width: auto;
+    opacity: 1.0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.footer__logo:hover {
+    opacity: 1;
+    transform: translateY(-2px); /* Subtle lift effect on hover */
+}
+
     /* ========================================
     16. ANIMATIONS & RESPONSIVE
     ========================================
@@ -1250,6 +1274,31 @@
         h1, h2, h3 { page-break-after: avoid; }
         .service-card { border: 1px solid #ddd; page-break-inside: avoid; }
     }
+
+    /* ========================================
+   NEW: ROOM GALLERY STYLES
+   ======================================== */
+.room-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-md);
+}
+
+.room-photo {
+    width: 100%;
+    height: 350px; /* Fixed height for uniformity */
+    object-fit: cover;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    transition: transform var(--duration-medium) ease, box-shadow var(--duration-medium) ease;
+}
+
+.room-photo:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
 </style>
 </head> <body id="top">
 
@@ -1343,7 +1392,7 @@
                 <p>Having worked in both community services and the corporate world, I understand the unique pressures of modern life. I offer a down-to-earth, non-judgemental partnership where you can be your messy, unpolished self.</p>
                 
                 <div class="credentials-bar mt-lg" style="justify-content: flex-start; margin-top: 2rem;">
-                     <div class="credential-item" title="MBACP 413816">
+                     <div class="credential-item" title="Registered Member of BACP">
                          <svg class="credential-icon" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
                          <span>BACP Registered</span>
                      </div>
@@ -1368,6 +1417,22 @@
             </div>
         </div>
     </section>
+    <section class="section section--cream">
+    <div class="container">
+        <div class="text-center mb-lg">
+            <h2 class="section-title">The Counselling Space</h2>
+            <p class="lead">A calm, private, and confidential environment designed for your safety and comfort.</p>
+        </div>
+        
+        <div class="room-gallery">
+            <img src="path/to/your-room-photo-1.jpg" alt="Comfortable seating in the counselling room" class="room-photo">
+            
+            <img src="path/to/your-room-photo-2.jpg" alt="View of the therapy space" class="room-photo">
+            
+            <img src="path/to/your-room-photo-3.jpg" alt="Calm details of the room" class="room-photo">
+        </div>
+    </div>
+</section>
 <section id="services" class="section section--white">
     <div class="container">
         <div class="text-center mb-xl reveal">
@@ -1553,7 +1618,7 @@
                     </div>
                     <div class="video-card__body">
                         <h4 class="h5" style="color: var(--palette-green-d);">What happens in the first session?</h4>
-                        <p class="text-sm text-muted mb-0" style="color: var(--palette-green-d);">A walkthrough of the intake process to reduce fear.</p>
+                        <p class="text-sm text-muted mb-0" style="color: white;">A walkthrough of the intake process to reduce fear.</p>
                     </div>
                 </div>
             </div>
@@ -1802,6 +1867,16 @@
             </div>
         </div>
     </div>
+
+    <div class="footer__accreditations">
+    <a href="https://www.bacp.co.uk/therapists/413816/deborah-armiger/st-neots-pe19" target="_blank" rel="noopener noreferrer" title="BACP Registered Member">
+        <img src="bacplogo.png" alt="BACP Registered Member Logo" class="footer__logo" width="120" height="auto">
+    </a>
+    
+    <a href="https://www.counselling-directory.org.uk/counsellors/deborah-armiger" target="_blank" rel="noopener noreferrer" title="Counselling Directory Member">
+        <img src="counselling-directory-logo.png" alt="Counselling Directory Member Logo" class="footer__logo" width="120" height="auto">
+    </a>
+</div>
 </footer>
 
 <script>
